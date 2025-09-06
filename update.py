@@ -1,18 +1,18 @@
 from scholarly import scholarly
 
-USER_ID = "hhNQwfkAAAAJ"  # il tuo ID da Scholar
+USER_ID = "hhNQwfkAAAAJ"  # your Google Scholar ID
 
 def main():
-    # Recupera autore e pubblicazioni
+    # Fetch author and publications
     author = scholarly.search_author_id(USER_ID)
     author = scholarly.fill(author, sections=["publications"])
 
-    # HTML di base
+    # HTML template (top)
     html_top = """<!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pubblicazioni - Winston Smith</title>
+  <title>Publications - Winston Smith</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
@@ -64,14 +64,16 @@ def main():
 </head>
 <body>
   <header>
-    <h1>Pubblicazioni di Winston Smith</h1>
-    <p class="subtitle">Lista aggiornata automaticamente da Google Scholar</p>
+    <h1>Winston Smith</h1>
+    <p class="subtitle">Automatically updated list of publications from Google Scholar</p>
   </header>
 
   <main>
+    <h2>Publications</h2>
     <ul class="paper-list">
 """
 
+    # HTML template (bottom)
     html_bottom = """    </ul>
   </main>
 
@@ -81,27 +83,27 @@ def main():
 </body>
 </html>"""
 
-    # Costruisci la lista dei paper
+    # Build the publications list
     items = []
     for pub in author['publications']:
         title = pub['bib']['title']
         year = pub['bib'].get('pub_year', 'N/A')
         citations = pub.get('num_citations', 0)
 
-        # Link diretto alla pagina Scholar del paper (se disponibile)
-        scholar_link = f"https://scholar.google.com/citations?view_op=view_citation&hl=it&user={USER_ID}&citation_for_view={pub['author_id']}"
+        # Scholar link (fallback: author page if citation id not available)
+        scholar_link = f"https://scholar.google.com/citations?user={USER_ID}&hl=en"
 
         item = f"""
       <li>
         <div class="paper-title">
           <a href="{scholar_link}" target="_blank">{title}</a>
         </div>
-        <div class="paper-meta">Anno: {year} • Citazioni: {citations}</div>
+        <div class="paper-meta">Year: {year} • Citations: {citations}</div>
       </li>
 """
         items.append(item)
 
-    # Scrivi il file completo
+    # Write final HTML
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_top + "".join(items) + html_bottom)
 
