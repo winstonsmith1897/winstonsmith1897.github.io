@@ -7,7 +7,7 @@ def main():
     author = scholarly.search_author_id(USER_ID)
     author = scholarly.fill(author, sections=["publications"])
 
-    # HTML header
+    # HTML header with navbar
     html_top = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,29 +16,46 @@ def main():
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
-      max-width: 950px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0;
       background: #fdfdfd;
       color: #333;
       line-height: 1.6;
     }
     header {
       text-align: center;
-      margin-bottom: 3rem;
+      padding: 2rem 1rem 1rem 1rem;
     }
     h1 {
       font-size: 2.4rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+    p.subtitle {
+      font-size: 1.1rem;
+      color: #555;
+    }
+    nav {
+      background: #333;
+      padding: 0.8rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 1.5rem;
     }
     h2 {
       margin-top: 2.5rem;
       border-bottom: 2px solid #ddd;
       padding-bottom: 0.4rem;
-    }
-    p.subtitle {
-      font-size: 1.1rem;
-      color: #555;
     }
     ul.paper-list {
       list-style: none;
@@ -62,9 +79,11 @@ def main():
     }
     footer {
       margin-top: 3rem;
+      padding: 1rem;
       text-align: center;
       font-size: 0.85rem;
       color: #888;
+      border-top: 1px solid #eee;
     }
   </style>
 </head>
@@ -73,6 +92,12 @@ def main():
     <h1>Winston Smith</h1>
     <p class="subtitle">Academic Page – Automatically updated from Google Scholar</p>
   </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#papers">Papers</a>
+    <a href="#projects">Projects</a>
+  </nav>
 
   <main>
     <section id="about">
