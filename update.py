@@ -3,88 +3,27 @@ from scholarly import scholarly
 USER_ID = "hhNQwfkAAAAJ"  # your Google Scholar ID
 
 def main():
-    # Fetch author and publications
     author = scholarly.search_author_id(USER_ID)
     author = scholarly.fill(author, sections=["publications"])
 
-    # HTML header with navbar
     html_top = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Winston Smith - Academic Page</title>
   <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0;
-      background: #fdfdfd;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem 1rem;
-    }
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.2rem;
-    }
-    p.subtitle {
-      font-size: 1.1rem;
-      color: #555;
-    }
-    nav {
-      background: #333;
-      padding: 0.8rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      padding: 1.5rem;
-    }
-    h2 {
-      margin-top: 2.5rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.4rem;
-    }
-    ul.paper-list {
-      list-style: none;
-      padding: 0;
-    }
-    ul.paper-list li {
-      background: #fff;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    }
-    .paper-title {
-      font-weight: bold;
-      font-size: 1.05rem;
-      margin-bottom: 0.3rem;
-    }
-    .paper-meta {
-      font-size: 0.9rem;
-      color: #666;
-    }
-    footer {
-      margin-top: 3rem;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #888;
-      border-top: 1px solid #eee;
-    }
+    body { font-family: Arial, sans-serif; max-width: 950px; margin: auto; padding: 0 1rem; background: #fdfdfd; color: #333; }
+    header { text-align: center; margin: 2rem 0; }
+    nav { background: #333; padding: 0.8rem; text-align: center; }
+    nav a { color: white; text-decoration: none; margin: 0 1rem; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    h1 { margin: 0.2rem 0; }
+    h2 { margin-top: 2.5rem; border-bottom: 2px solid #ddd; padding-bottom: 0.3rem; }
+    ul.paper-list { list-style: none; padding: 0; }
+    ul.paper-list li { background: #fff; padding: 1rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
+    .paper-title { font-weight: bold; font-size: 1.05rem; margin-bottom: 0.3rem; }
+    .paper-meta { font-size: 0.9rem; color: #666; }
+    footer { text-align: center; margin: 3rem 0 1rem 0; color: #888; font-size: 0.85rem; }
   </style>
 </head>
 <body>
@@ -102,11 +41,7 @@ def main():
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>
-        I am a researcher in Cybersecurity and Artificial Intelligence. 
-        My work focuses on malware analysis, knowledge graphs, and the 
-        application of large language models to cyber threat intelligence.
-      </p>
+      <p>I am a researcher in Cybersecurity and Artificial Intelligence. My work focuses on malware analysis, knowledge graphs, and the application of large language models to cyber threat intelligence.</p>
     </section>
 
     <section id="papers">
@@ -114,7 +49,6 @@ def main():
       <ul class="paper-list">
 """
 
-    # HTML footer
     html_bottom = """      </ul>
     </section>
 
@@ -130,25 +64,26 @@ def main():
 </body>
 </html>"""
 
-    # Build list of papers
     items = []
     for pub in author['publications']:
-        title = pub['bib']['title']
-        year = pub['bib'].get('pub_year', 'N/A')
-        citations = pub.get('num_citations', 0)
-        scholar_link = f"https://scholar.google.com/citations?user={USER_ID}&hl=en"
+        # Fill each publication to get more details
+        pub_filled = scholarly.fill(pub)
+        title = pub_filled['bib']['title']
+        year = pub_filled['bib'].get('pub_year', 'N/A')
+        citations = pub_filled.get('num_citations', 0)
 
-        item = f"""
+        # Try to get DOI / external URL
+        url = pub_filled.get("pub_url", None)
+        if not url:
+            url = f"https://scholar.google.com/citations?user={USER_ID}&hl=en"
+
+        items.append(f"""
         <li>
-          <div class="paper-title">
-            <a href="{scholar_link}" target="_blank">{title}</a>
-          </div>
+          <div class="paper-title"><a href="{url}" target="_blank">{title}</a></div>
           <div class="paper-meta">Year: {year} • Citations: {citations}</div>
         </li>
-"""
-        items.append(item)
+""")
 
-    # Write final HTML
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_top + "".join(items) + html_bottom)
 
