@@ -2,7 +2,7 @@ name: Update Scholar Papers
 
 on:
   schedule:
-    - cron: '0 0 * * 0'   # ogni domenica a mezzanotte
+    - cron: '0 8 * * *'   # ogni giorno alle 08:00 UTC
   workflow_dispatch:       # avvio manuale
 
 jobs:
