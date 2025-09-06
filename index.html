@@ -1,28 +1,51 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pubblicazioni - Winston Smith</title>
+  <title>Winston Smith - Academic Page</title>
   <style>
     body {
       font-family: "Segoe UI", Arial, sans-serif;
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      background: #f9f9f9;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0;
+      background: #fdfdfd;
       color: #333;
+      line-height: 1.6;
     }
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      padding: 2rem 1rem 1rem 1rem;
     }
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.4rem;
+      margin-bottom: 0.2rem;
     }
     p.subtitle {
       font-size: 1.1rem;
       color: #555;
+    }
+    nav {
+      background: #333;
+      padding: 0.8rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 1.5rem;
+    }
+    h2 {
+      margin-top: 2.5rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.4rem;
     }
     ul.paper-list {
       list-style: none;
@@ -33,11 +56,11 @@
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
     }
     .paper-title {
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin-bottom: 0.3rem;
     }
     .paper-meta {
@@ -46,28 +69,109 @@
     }
     footer {
       margin-top: 3rem;
+      padding: 1rem;
       text-align: center;
       font-size: 0.85rem;
       color: #888;
+      border-top: 1px solid #eee;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Pubblicazioni di Winston Smith</h1>
-    <p class="subtitle">Lista aggiornata automaticamente da Google Scholar</p>
+    <h1>Winston Smith</h1>
+    <p class="subtitle">Academic Page – Automatically updated from Google Scholar</p>
   </header>
 
+  <nav>
+    <a href="#about">About</a>
+    <a href="#papers">Papers</a>
+    <a href="#projects">Projects</a>
+  </nav>
+
   <main>
-    <ul class="paper-list">
-      <!-- Qui lo script Python inserirà i paper -->
-      <li>
-        <div class="paper-title">
-          <a href="#" target="_blank">Titolo di esempio</a>
-        </div>
-        <div class="paper-meta">Anno: 2024 • Citazioni: 12</div>
-      </li>
-    </ul>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a researcher in Cybersecurity and Artificial Intelligence. 
+        My work focuses on malware analysis, knowledge graphs, and the 
+        application of large language models to cyber threat intelligence.
+      </p>
+    </section>
+
+    <section id="papers">
+      <h2>Papers</h2>
+      <ul class="paper-list">
+
+        <li>
+          <div class="paper-title">
+            <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank">Concise thoughts: Impact of output length on llm reasoning and cost</a>
+          </div>
+          <div class="paper-meta">Year: 2024 • Citations: 54</div>
+        </li>
+
+        <li>
+          <div class="paper-title">
+            <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank">MoRSE: Bridging the gap in cybersecurity expertise with retrieval augmented generation</a>
+          </div>
+          <div class="paper-meta">Year: 2025 • Citations: 10</div>
+        </li>
+
+        <li>
+          <div class="paper-title">
+            <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank">Graph-based android malware detection and categorization through bert transformer</a>
+          </div>
+          <div class="paper-meta">Year: 2023 • Citations: 9</div>
+        </li>
+
+        <li>
+          <div class="paper-title">
+            <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank">Unmasking model behavior: How llms reason on vulnerability detection</a>
+          </div>
+          <div class="paper-meta">Year: 2025 • Citations: 1</div>
+        </li>
+
+        <li>
+          <div class="paper-title">
+            <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank">Improving LLM Reasoning for Vulnerability Detection via Group Relative Policy Optimization</a>
+          </div>
+          <div class="paper-meta">Year: 2025 • Citations: 1</div>
+        </li>
+
+        <li>
+          <div class="paper-title">
+            <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank">Leveraging Knowledge Graphs and LLMs for Structured Generation of Misinformation</a>
+          </div>
+          <div class="paper-meta">Year: 2025 • Citations: 0</div>
+        </li>
+
+        <li>
+          <div class="paper-title">
+            <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank">On-Device Derivation of IoT Usage Control Policies: Automating U-XACML Policy Generation from Natural Language with LLMs in Smart Homes Environments</a>
+          </div>
+          <div class="paper-meta">Year: 2025 • Citations: 0</div>
+        </li>
+
+        <li>
+          <div class="paper-title">
+            <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank">GTPO: Trajectory-Based Policy Optimization in Large Language Models</a>
+          </div>
+          <div class="paper-meta">Year: 2025 • Citations: 0</div>
+        </li>
+
+        <li>
+          <div class="paper-title">
+            <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank">MATRIX: A Comprehensive Graph-Based Framework for Malware Analysis and Threat Research</a>
+          </div>
+          <div class="paper-meta">Year: 2025 • Citations: 0</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>Coming soon...</p>
+    </section>
   </main>
 
   <footer>
