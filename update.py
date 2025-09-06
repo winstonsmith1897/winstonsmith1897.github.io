@@ -82,6 +82,7 @@ def main():
       <a href="https://github.com/winstonsmith1897" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
       <a href="https://medium.com/@marco.simoni0711" target="_blank"><i class="fab fa-medium"></i></a>
+      <a href="mailto:marco.simoni@iit.cnr.it"><i class="fas fa-envelope"></i></a>
     </div>
   </header>
 
