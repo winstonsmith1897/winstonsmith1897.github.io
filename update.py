@@ -120,7 +120,7 @@ def main():
 </head>
 <body>
   <header>
-    <img src="profile.jpg" alt="Marco Simoni">
+    <img src="profile.png" alt="Marco Simoni">
     <h1>Marco Simoni</h1>
     <p class="subtitle">Cybersecurity & Artificial Intelligence Researcher</p>
     <div class="social-links">
