@@ -11,29 +11,47 @@ def main():
 <head>
   <meta charset="UTF-8">
   <title>Marco Simoni - Academic Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: "Segoe UI", Arial, sans-serif; max-width: 1000px; margin: 0 auto; background: #fafafa; color: #333; }
+    body { font-family: 'Poppins', sans-serif; max-width: 1100px; margin: 0 auto; background: #fafafa; color: #333; line-height: 1.6; }
     header { text-align: center; padding: 2rem 1rem; background: linear-gradient(135deg, #2c3e50, #3498db); color: white; }
     header img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid white; margin-bottom: 1rem; }
     h1 { font-size: 2.6rem; margin-bottom: 0.3rem; }
     p.subtitle { font-size: 1.2rem; color: #eee; margin-bottom: 1rem; }
-    .social-links a { margin: 0 0.7rem; font-size: 1.5rem; color: white; text-decoration: none; }
+    .social-links a { margin: 0 0.7rem; font-size: 1.5rem; color: white; text-decoration: none; transition: color 0.3s; }
     .social-links a:hover { color: #f1c40f; }
-    nav { background: #333; padding: 0.8rem; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 1rem; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
+
+    nav { background: #333; padding: 0.8rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
+    nav a { color: white; text-decoration: none; margin: 0 1rem; font-weight: bold; position: relative; }
+    nav a::after { content: ""; display: block; height: 2px; background: #f1c40f; transition: width 0.3s; width: 0; margin: auto; }
+    nav a:hover::after { width: 100%; }
+
     main { padding: 2rem; }
     h2 { margin-top: 2.5rem; border-bottom: 2px solid #ddd; padding-bottom: 0.4rem; }
-    ul.paper-list { list-style: none; padding: 0; }
-    ul.paper-list li { background: #fff; padding: 1rem 1.5rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); transition: transform 0.2s; }
-    ul.paper-list li:hover { transform: scale(1.02); }
-    .paper-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 0.3rem; color: #2c3e50; }
+
+    /* Alternating section background */
+    section:nth-of-type(even) { background: #f0f0f5; padding: 2rem; border-radius: 12px; }
+
+    /* Papers grid */
+    ul.paper-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1rem; padding: 0; list-style: none; }
+    ul.paper-list li { background: #fff; padding: 1rem 1.5rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.3s; }
+    ul.paper-list li:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+    .paper-title { font-weight: bold; font-size: 1.05rem; margin-bottom: 0.3rem; color: #2c3e50; }
     .paper-title a { color: inherit; text-decoration: none; }
     .paper-title a:hover { text-decoration: underline; color: #2980b9; }
     .paper-meta { font-size: 0.9rem; color: #666; }
-    .article-card { background: #fff; padding: 1.5rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
+
+    /* Articles */
+    .article-card { background: #fff; padding: 1.5rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); transition: transform 0.2s; }
+    .article-card:hover { transform: translateY(-5px); }
     .article-card h3 { margin-top: 0; }
+
+    /* Projects */
+    .project-card { background: #fff; padding: 1.5rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
+    .project-card h3 { margin-top: 0; }
+    .project-card iframe { width: 100%; height: 315px; max-width: 700px; border-radius: 8px; }
+
     footer { margin-top: 3rem; padding: 1rem; text-align: center; font-size: 0.85rem; color: #888; border-top: 1px solid #eee; }
   </style>
 </head>
@@ -41,7 +59,7 @@ def main():
   <header>
     <img src="profile.png" alt="Marco Simoni">
     <h1>Marco Simoni</h1>
-    <p class="subtitle">Researcher in AI, LLMs, Reinforcement Learning & Cybersecurity</p>
+    <p class="subtitle">Researcher in AI, LLMs, Reinforcement Learning & AI Alignment</p>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/marco-simoni-ba1a06242/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/winstonsmith1897" target="_blank"><i class="fab fa-github"></i></a>
@@ -54,7 +72,7 @@ def main():
     <a href="#about">About</a>
     <a href="#papers">Papers</a>
     <a href="#articles">Articles</a>
-    <a href="#projects">Projects & Videos</a>
+    <a href="#projects">Projects</a>
   </nav>
 
   <main>
@@ -83,7 +101,7 @@ def main():
       <h2>Articles</h2>
       <div class="article-card">
         <h3><a href="https://medium.com/@marco.simoni0711/gtpo-vs-grpo-a-smarter-path-to-stable-reasoning-llms-3f51bc0b58c1" target="_blank">
-          GTPO vs GRPO: A Smarter Path to Stable Reasoning LLMs
+          Exploring Reinforcement Learning for LLM Alignment
         </a></h3>
         <p>
           In this piece I discuss the differences between <b>GRPO</b> and <b>GTPO</b>, 
@@ -96,11 +114,10 @@ def main():
 
     <section id="projects">
       <h2>Projects</h2>
-
       <div class="project-card">
         <h3>Mixture of RAG Security Experts (MoRSE)</h3>
         <div style="text-align:center; margin: 1rem 0;">
-          <iframe width="560" height="315" 
+          <iframe 
             src="https://www.youtube.com/embed/nsI1HCUVDSc" 
             title="YouTube video player" 
             frameborder="0" 
@@ -120,7 +137,6 @@ def main():
           knowledge enrichment without retraining.
         </p>
       </div>
-
       <p>More projects coming soon...</p>
     </section>
   </main>
