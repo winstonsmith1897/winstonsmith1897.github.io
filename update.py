@@ -76,7 +76,7 @@ def main():
   <header>
     <img src="profile.png" alt="Marco Simoni">
     <h1>Marco Simoni</h1>
-    <p class="subtitle">Researcher in AI, LLMs, Reinforcement Learning & AI Alignment</p>
+    <p class="subtitle">Researcher in AI, LLMs, Reinforcement Learning & Cybersecurity</p>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/marco-simoni-ba1a06242/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/winstonsmith1897" target="_blank"><i class="fab fa-github"></i></a>
@@ -135,6 +135,7 @@ def main():
 
     <section id="projects">
       <h2>Projects</h2>
+
       <div class="project-card">
         <h3>Mixture of RAG Security Experts (MoRSE)</h3>
         <div style="text-align:center; margin: 1rem 0;">
@@ -160,6 +161,7 @@ def main():
       </div>
     </section>
   </main>
+
 
   <footer>
     &copy; 2025 Marco Simoni – Powered by GitHub Pages &amp; Google Scholar
