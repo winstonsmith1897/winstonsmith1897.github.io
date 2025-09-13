@@ -218,7 +218,7 @@ def main():
                   Cybersecurity with LLMs and RAGs: Challenges and Innovations
                 </a>
               </div>
-              <div class="paper-meta">Year: N/A • Citations: 0</div>
+              <div class="paper-meta">Year: 2024 </div>
             </li>
     """)
 
