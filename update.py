@@ -210,6 +210,18 @@ def main():
         </li>
 """)
 
+    # Aggiungi un paper manuale in coda alla lista
+    items.append("""
+            <li>
+              <div class="paper-title">
+                <a href="https://www.springerprofessional.de/en/cybersecurity-with-llms-and-rags-challenges-and-innovations/51404966" target="_blank">
+                  Cybersecurity with LLMs and RAGs: Challenges and Innovations
+                </a>
+              </div>
+              <div class="paper-meta">Year: N/A • Citations: 0</div>
+            </li>
+    """)
+
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_top + "".join(items) + html_bottom)
 
