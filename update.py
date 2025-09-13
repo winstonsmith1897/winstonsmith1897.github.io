@@ -136,7 +136,7 @@ def main():
           REINFORCE vs. Posterior Token Targets: Two Paths to Steering Language Models
         </a></h3>
         <p>
-          Sharing some brief notes I wrote for myself — maybe useful for others too.  
+          Sharing some brief notes I wrote for myself ... maybe useful for others too.  
           👉 Posterior: update = p - q (deterministic, low variance, compute-heavy).  
           👉 REINFORCE: update = -A(y)(e_y - p) (lightweight, scalable, noisy — matches q only in expectation).  
         </p>
