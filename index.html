@@ -139,6 +139,18 @@
     html{ scroll-behavior:smooth; }
     section{ scroll-margin-top: 90px; }
 
+    @media (prefers-reduced-motion: no-preference){
+    .project-card, .article-card, ul.paper-list li{
+      animation: rise .6s ease both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 25%;
+    }
+    @keyframes rise{
+      from{ opacity:0; transform: translateY(14px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
+  }
+
 
     footer { margin-top: 3rem; padding: 1rem; text-align: center; font-size: 0.85rem; color: #888; border-top: 1px solid #eee; }
   </style>
@@ -435,20 +447,38 @@
     &copy; 2025 Marco Simoni – Powered by GitHub Pages &amp; Google Scholar
   </footer>
 
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const toggleIcon = document.querySelector(".theme-toggle i");
-      if (body.getAttribute("data-theme") === "light") {
-        body.setAttribute("data-theme", "dark");
-        toggleIcon.classList.remove("fa-moon");
-        toggleIcon.classList.add("fa-sun");
-      } else {
-        body.setAttribute("data-theme", "light");
-        toggleIcon.classList.remove("fa-sun");
-        toggleIcon.classList.add("fa-moon");
-      }
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    const toggleIcon = document.querySelector(".theme-toggle i");
+    if (body.getAttribute("data-theme") === "light") {
+      body.setAttribute("data-theme", "dark");
+      toggleIcon.classList.remove("fa-moon");
+      toggleIcon.classList.add("fa-sun");
+    } else {
+      body.setAttribute("data-theme", "light");
+      toggleIcon.classList.remove("fa-sun");
+      toggleIcon.classList.add("fa-moon");
     }
-  </script>
+  }
+
+  // Active section indicator in navbar
+  const navLinks = [...document.querySelectorAll("nav a[href^='#']")];
+  const sections = navLinks
+    .map(a => document.querySelector(a.getAttribute("href")))
+    .filter(Boolean);
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(a => a.classList.remove("active"));
+      const active = navLinks.find(a => a.getAttribute("href") === `#${e.target.id}`);
+      if (active) active.classList.add("active");
+    });
+  }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+  sections.forEach(s => obs.observe(s));
+</script>
+
 </body>
 </html>
