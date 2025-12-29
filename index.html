@@ -87,6 +87,41 @@
     .btn.ghost{ background: rgba(0,0,0,0.12); color:white; }
     .btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
 
+    :root{
+  --shadow: 0 10px 30px rgba(0,0,0,0.07);
+  --shadow-hover: 0 18px 45px rgba(0,0,0,0.14);
+  --border: rgba(0,0,0,0.08);
+    }
+    [data-theme="dark"]{
+      --shadow: 0 10px 30px rgba(0,0,0,0.45);
+      --shadow-hover: 0 18px 45px rgba(0,0,0,0.55);
+      --border: rgba(255,255,255,0.10);
+    }
+
+    main{ padding: 2.2rem; }
+    .project-card, .article-card, ul.paper-list li{
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .project-card:hover, .article-card:hover, ul.paper-list li:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .badges{ display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1rem; }
+    .badge{
+      display:inline-flex; align-items:center; gap:0.45rem;
+      padding:0.45rem 0.75rem;
+      border-radius:999px;
+      background: rgba(52,152,219,0.10);
+      border: 1px solid var(--border);
+      font-weight:600; font-size:0.9rem;
+    }
+    [data-theme="dark"] .badge{ background: rgba(243,156,18,0.12); }
+
+
+
     footer { margin-top: 3rem; padding: 1rem; text-align: center; font-size: 0.85rem; color: #888; border-top: 1px solid #eee; }
   </style>
 </head>
@@ -126,6 +161,13 @@
 
   <main>
     <section id="about">
+      <div class="badges">
+      <span class="badge"><i class="fas fa-brain"></i> LLM Alignment</span>
+      <span class="badge"><i class="fas fa-robot"></i> RLHF / GRPO / GTPO</span>
+      <span class="badge"><i class="fas fa-shield-halved"></i> Cybersecurity AI</span>
+      <span class="badge"><i class="fas fa-diagram-project"></i> Knowledge Graphs</span>
+    </div>
+
       <h2>About Me</h2>
       <p>
         I am a researcher passionate about <b>Large Language Models (LLMs)</b> 
