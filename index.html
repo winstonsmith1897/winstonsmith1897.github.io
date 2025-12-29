@@ -222,11 +222,45 @@
 
       </div>
 
-      <p>
-        Visualization of the GTPO optimization process in a maze-like environment,
-        showing how group-relative trajectories guide policy improvement.
-      </p>
-    </div>
+      
+  <p class="project-description">
+    This repository contains the official implementation of
+    <strong>GTPO (Group-relative Trajectory-based Policy Optimization)</strong>,
+    a novel method for stable and effective policy optimization in Large Language Models (LLMs).
+    <br><br>
+    GTPO addresses key limitations of Group-relative Policy Optimization (GRPO), namely:
+  </p>
+
+  <ol class="project-list">
+    <li>
+      <strong>Token-level gradient conflicts</strong> – where tokens shared across positively
+      and negatively rewarded completions are inconsistently updated, often penalizing
+      essential formatting tokens.
+    </li>
+    <li>
+      <strong>Policy collapse</strong> – where negatively rewarded completions destabilize
+      training, flattening the output distribution and degrading performance.
+    </li>
+  </ol>
+
+  <p class="project-description">
+    GTPO introduces <strong>conflict-aware gradient corrections</strong> and
+    <strong>entropy-based regularization</strong> to mitigate these issues, ensuring more
+    stable training without the need for KL-divergence regularization or a reference model.
+  </p>
+
+  <p class="project-links">
+    📄 Paper:
+    <a href="https://arxiv.org/abs/2508.03772" target="_blank">
+      GTPO: Trajectory-Based Policy Optimization in Large Language Models
+    </a>
+    <br>
+    💻 Code:
+    <a href="https://github.com/winstonsmith1897/GTPO" target="_blank">
+      github.com/winstonsmith1897/GTPO
+    </a>
+  </p>
+</div>
 
 
       <div class="project-card">
