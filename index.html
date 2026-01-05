@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marco Simoni - Academic Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -35,22 +34,6 @@
     nav a::after { content: ""; display: block; height: 2px; background: var(--link-hover); transition: width 0.3s; width: 0; margin: auto; }
     nav a:hover::after { width: 100%; }
 
-    nav{
-      background: rgba(20,20,20,0.78);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    nav a{
-      padding: 0.35rem 0.2rem;
-      opacity: 0.9;
-    }
-    nav a.active{
-      opacity: 1;
-      color: var(--link-hover);
-    }
-    nav a.active::after{ width: 100%; }
-
-
     /* Toggle button */
     .theme-toggle { margin-left: auto; cursor: pointer; color: white; font-size: 1.2rem; }
 
@@ -78,108 +61,6 @@
     .project-card h3 { margin-top: 0; }
     .project-card iframe { width: 100%; height: 315px; max-width: 700px; border-radius: 8px; }
 
-
-
-
-    header { position: relative; overflow: hidden; }
-    header::after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 50%),
-                  radial-gradient(circle at 80% 10%, rgba(255,255,255,0.12), transparent 45%),
-                  radial-gradient(circle at 60% 90%, rgba(255,255,255,0.10), transparent 55%);
-      transform: rotate(8deg);
-      pointer-events:none;
-    }
-    .cta-row{ display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; margin-top:1.2rem; position:relative; z-index:1; }
-    .btn{
-      display:inline-flex; align-items:center; gap:0.55rem;
-      padding:0.7rem 1.05rem; border-radius:999px;
-      text-decoration:none; font-weight:700; font-size:0.95rem;
-      border:1px solid rgba(255,255,255,0.25);
-      transition: transform .2s, box-shadow .25s, background .25s;
-    }
-    .btn.primary{ background: rgba(255,255,255,0.95); color:#1b1b1b; }
-    .btn.ghost{ background: rgba(0,0,0,0.12); color:white; }
-    .btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
-
-    :root{
-  --shadow: 0 10px 30px rgba(0,0,0,0.07);
-  --shadow-hover: 0 18px 45px rgba(0,0,0,0.14);
-  --border: rgba(0,0,0,0.08);
-    }
-    [data-theme="dark"]{
-      --shadow: 0 10px 30px rgba(0,0,0,0.45);
-      --shadow-hover: 0 18px 45px rgba(0,0,0,0.55);
-      --border: rgba(255,255,255,0.10);
-    }
-
-    main{ padding: 2.2rem; }
-    .project-card, .article-card, ul.paper-list li{
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(6px);
-    }
-    .project-card:hover, .article-card:hover, ul.paper-list li:hover{
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .badges{ display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1rem; }
-    .badge{
-      display:inline-flex; align-items:center; gap:0.45rem;
-      padding:0.45rem 0.75rem;
-      border-radius:999px;
-      background: rgba(52,152,219,0.10);
-      border: 1px solid var(--border);
-      font-weight:600; font-size:0.9rem;
-    }
-    [data-theme="dark"] .badge{ background: rgba(243,156,18,0.12); }
-
-    html{ scroll-behavior:smooth; }
-    section{ scroll-margin-top: 90px; }
-
-    @media (prefers-reduced-motion: no-preference){
-    .project-card, .article-card, ul.paper-list li{
-      animation: rise .6s ease both;
-      animation-timeline: view();
-      animation-range: entry 10% cover 25%;
-    }
-    @keyframes rise{
-      from{ opacity:0; transform: translateY(14px); }
-      to{ opacity:1; transform: translateY(0); }
-    }
-  }
-
-    .card-top{
-    display:flex; gap:.8rem; align-items:flex-start; justify-content:space-between;
-    flex-wrap:wrap; margin-bottom:.6rem;
-  }
-  .pills{ display:flex; gap:.45rem; flex-wrap:wrap; margin-top:.35rem; }
-  .pill{
-    font-size:.78rem; font-weight:700;
-    padding:.25rem .55rem; border-radius:999px;
-    border:1px solid var(--border);
-    background: rgba(52,152,219,0.10);
-  }
-  [data-theme="dark"] .pill{ background: rgba(243,156,18,0.10); }
-
-  .card-actions{
-    display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.9rem;
-  }
-  .linkbtn{
-    display:inline-flex; align-items:center; gap:.45rem;
-    padding:.45rem .75rem; border-radius:999px;
-    border:1px solid var(--border);
-    text-decoration:none; font-weight:800; font-size:.9rem;
-    transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
-  }
-  .linkbtn:hover{ transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,0.12); }
-  .linkbtn.primary{ background: rgba(52,152,219,0.12); }
-  [data-theme="dark"] .linkbtn.primary{ background: rgba(243,156,18,0.12); }
-
-
-
     footer { margin-top: 3rem; padding: 1rem; text-align: center; font-size: 0.85rem; color: #888; border-top: 1px solid #eee; }
   </style>
 </head>
@@ -195,16 +76,6 @@
       <a href="https://medium.com/@marco.simoni0711" target="_blank"><i class="fab fa-medium"></i></a>
       <a href="mailto:marco.simoni@iit.cnr.it"><i class="fas fa-envelope"></i></a>
     </div>
-
-  <div class="cta-row">
-    <a class="btn primary" href="mailto:marco.simoni@iit.cnr.it">
-      <i class="fas fa-paper-plane"></i> Work with me
-    </a>
-    <a class="btn ghost" href="#projects">
-      <i class="fas fa-flask"></i> See projects
-    </a>
-  </div>
-
   </header>
 
   <nav>
@@ -219,13 +90,6 @@
 
   <main>
     <section id="about">
-      <div class="badges">
-      <span class="badge"><i class="fas fa-brain"></i> LLM Alignment</span>
-      <span class="badge"><i class="fas fa-robot"></i> RLHF / GRPO / GTPO</span>
-      <span class="badge"><i class="fas fa-shield-halved"></i> Cybersecurity AI</span>
-      <span class="badge"><i class="fas fa-diagram-project"></i> Knowledge Graphs</span>
-    </div>
-
       <h2>About Me</h2>
       <p>
         I am a researcher passionate about <b>Large Language Models (LLMs)</b> 
@@ -249,12 +113,17 @@
 
         <li>
           <div class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/3672608.3707898" target="_blank">MoRSE: Bridging the gap in cybersecurity expertise with retrieval augmented generation</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 16</div>
+          <div class="paper-meta">Year: 2025 • Citations: 17</div>
         </li>
 
         <li>
           <div class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/3600160.3605057" target="_blank">Graph-based android malware detection and categorization through bert transformer</a></div>
           <div class="paper-meta">Year: 2023 • Citations: 11</div>
+        </li>
+
+        <li>
+          <div class="paper-title"><a href="https://arxiv.org/abs/2508.03772" target="_blank">GTPO: Stabilizing Group Relative Policy Optimization via Gradient and Entropy Control</a></div>
+          <div class="paper-meta">Year: 2025 • Citations: 3</div>
         </li>
 
         <li>
@@ -264,11 +133,6 @@
 
         <li>
           <div class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0167739X25003620" target="_blank">On-device derivation of IoT usage control policies: Automating U-XACML policy generation from natural language with LLMs in smart homes environments</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 2</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250803772S/abstract" target="_blank">GTPO: Trajectory-Based Policy Optimization in Large Language Models</a></div>
           <div class="paper-meta">Year: 2025 • Citations: 2</div>
         </li>
 
@@ -299,11 +163,6 @@
 
         <li>
           <div class="paper-title"><a href="https://arxiv.org/abs/2510.14670" target="_blank">TITAN: Graph-Executable Reasoning for Cyber Threat Intelligence</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 0</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://arxiv.org/abs/2508.03772" target="_blank">GTPO: Stabilizing Group Relative Policy Optimization via Gradient and Entropy Control</a></div>
           <div class="paper-meta">Year: 2025 • Citations: 0</div>
         </li>
 
@@ -345,104 +204,6 @@
 
     <section id="projects">
       <h2>Projects</h2>
-      <div class="project-card">
-      <h3>GTPO: Group-relative Trajectory-Based Policy Optimization</h3>
-
-      <div style="text-align:center; margin: 1rem 0;">
-        <img 
-  src="videos/maze.gif"
-  alt="GTPO maze optimization visualization"
-  style="max-width:60%; height:auto; border-radius:8px;"
->
-
-
-      </div>
-
-      
-  <p class="project-description">
-    This repository contains the official implementation of
-    <strong>GTPO (Group-relative Trajectory-based Policy Optimization)</strong>,
-    a novel method for stable and effective policy optimization in Large Language Models (LLMs).
-    <br><br>
-    GTPO addresses key limitations of Group-relative Policy Optimization (GRPO), namely:
-  </p>
-
-  <ol class="project-list">
-    <li>
-      <strong>Token-level gradient conflicts</strong> – where tokens shared across positively
-      and negatively rewarded completions are inconsistently updated, often penalizing
-      essential formatting tokens.
-    </li>
-    <li>
-      <strong>Policy collapse</strong> – where negatively rewarded completions destabilize
-      training, flattening the output distribution and degrading performance.
-    </li>
-  </ol>
-
-  <p class="project-description">
-    GTPO introduces <strong>conflict-aware gradient corrections</strong> and
-    <strong>entropy-based regularization</strong> to mitigate these issues, ensuring more
-    stable training without the need for KL-divergence regularization or a reference model.
-  </p>
-
-  <p class="project-links">
-    📄 Paper:
-    <a href="https://arxiv.org/abs/2508.03772" target="_blank">
-      GTPO: Trajectory-Based Policy Optimization in Large Language Models
-    </a>
-    <br>
-    💻 Code:
-    <a href="https://github.com/winstonsmith1897/GTPO" target="_blank">
-      github.com/winstonsmith1897/GTPO
-    </a>
-  </p>
-</div>
-
-<div class="project-card">
-  <h3>TITAN: Typed Bidirectional Knowledge Graph for CTI Reasoning</h3>
-
-  <p class="project-description">
-    TITAN is a <strong>typed, bidirectional knowledge graph framework</strong> for
-    <strong>Cyber Threat Intelligence (CTI)</strong> reasoning and
-    <strong>question answering</strong>.
-    It integrates data from the <strong>MITRE ATT&CK STIX</strong> bundles,
-    builds a <strong>TITAN Ontology</strong>, generates
-    <strong>reasoning (CoT)</strong> and <strong>non-reasoning (NoCoT)</strong>
-    datasets, and provides an <strong>end-to-end pipeline</strong> for model
-    training, evaluation, and graph execution.
-  </p>
-
-  <h4 class="project-subtitle">🎬 Demos</h4>
-
-  <div class="project-demos" style="text-align:center; margin: 1rem 0;">
-    <figure>
-      <img src="videos/demo3.gif" alt="TITAN with Chain of Thought (CoT)" loading="lazy"   style="max-width:90%; height:auto; border-radius:8px;">
-      <figcaption>TITAN with Chain of Thought (CoT)</figcaption>
-    </figure>
-
-    <figure>
-      <img src="videos/demo1.gif" alt="No Chain of Thought (Example 1)" loading="lazy"   style="max-width:90%; height:auto; border-radius:8px;">
-      <figcaption>No Chain of Thought (Example 1)</figcaption>
-    </figure>
-
-    <figure>
-      <img src="videos/demo2.gif" alt="No Chain of Thought (Example 2)" loading="lazy"   style="max-width:90%; height:auto; border-radius:8px;">
-      <figcaption>No Chain of Thought (Example 2)</figcaption>
-    </figure>
-
-    <figure>
-      <img src="videos/demo4.gif" alt="TITAN as a Cybersecurity Agent" loading="lazy"   style="max-width:90%; height:auto; border-radius:8px;">
-      <figcaption>TITAN as a tool for a Cybersecurity Agent</figcaption>
-    </figure>
-  </div>
-
-  <p class="project-links">
-    💻 Code:
-    <a href="https://github.com/cti-graph-reasoner/TITAN" target="_blank">
-      github.com/cti-graph-reasoner/TITAN
-    </a>
-  </p>
-</div>
 
       <div class="project-card">
         <h3>Mixture of RAG Security Experts (MoRSE)</h3>
@@ -475,38 +236,20 @@
     &copy; 2025 Marco Simoni – Powered by GitHub Pages &amp; Google Scholar
   </footer>
 
-<script>
-  function toggleTheme() {
-    const body = document.body;
-    const toggleIcon = document.querySelector(".theme-toggle i");
-    if (body.getAttribute("data-theme") === "light") {
-      body.setAttribute("data-theme", "dark");
-      toggleIcon.classList.remove("fa-moon");
-      toggleIcon.classList.add("fa-sun");
-    } else {
-      body.setAttribute("data-theme", "light");
-      toggleIcon.classList.remove("fa-sun");
-      toggleIcon.classList.add("fa-moon");
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const toggleIcon = document.querySelector(".theme-toggle i");
+      if (body.getAttribute("data-theme") === "light") {
+        body.setAttribute("data-theme", "dark");
+        toggleIcon.classList.remove("fa-moon");
+        toggleIcon.classList.add("fa-sun");
+      } else {
+        body.setAttribute("data-theme", "light");
+        toggleIcon.classList.remove("fa-sun");
+        toggleIcon.classList.add("fa-moon");
+      }
     }
-  }
-
-  // Active section indicator in navbar
-  const navLinks = [...document.querySelectorAll("nav a[href^='#']")];
-  const sections = navLinks
-    .map(a => document.querySelector(a.getAttribute("href")))
-    .filter(Boolean);
-
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      navLinks.forEach(a => a.classList.remove("active"));
-      const active = navLinks.find(a => a.getAttribute("href") === `#${e.target.id}`);
-      if (active) active.classList.add("active");
-    });
-  }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
-
-  sections.forEach(s => obs.observe(s));
-</script>
-
+  </script>
 </body>
 </html>
