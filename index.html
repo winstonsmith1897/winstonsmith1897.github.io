@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marco Simoni — LLM Alignment &amp; Reinforcement Learning</title>
 
-<meta name="description" content="Marco Simoni — researcher at IIT-CNR, Pisa. LLM alignment, reinforcement learning (GRPO/GTPO), reasoning, and AI for cybersecurity. Papers, projects and code.">
+<meta name="description" content="Marco Simoni — researcher at Scuola Superiore Sant'Anna, Pisa. Reinforcement learning for LLM post-training and alignment, reasoning, and AI for cybersecurity. Papers, projects and code.">
 <meta name="author" content="Marco Simoni">
 <link rel="canonical" href="https://winstonsmith1897.github.io/">
 
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Marco Simoni — LLM Alignment &amp; Reinforcement Learning">
-<meta property="og:description" content="Researcher at IIT-CNR, Pisa. LLM alignment, reinforcement learning (GRPO/GTPO), reasoning, and AI for cybersecurity.">
+<meta property="og:description" content="Researcher at Scuola Superiore Sant'Anna, Pisa. Reinforcement learning for LLM post-training and alignment, and AI for cybersecurity.">
 <meta property="og:url" content="https://winstonsmith1897.github.io/">
 <meta property="og:image" content="https://winstonsmith1897.github.io/profile.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Marco Simoni — LLM Alignment &amp; Reinforcement Learning">
-<meta name="twitter:description" content="Researcher at IIT-CNR, Pisa. LLM alignment, reinforcement learning, and AI for cybersecurity.">
+<meta name="twitter:description" content="Researcher at Scuola Superiore Sant'Anna, Pisa. RL for LLM alignment, and AI for cybersecurity.">
 <meta name="twitter:image" content="https://winstonsmith1897.github.io/profile.png">
 <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -48,17 +48,20 @@
   "url": "https://winstonsmith1897.github.io/",
   "image": "https://winstonsmith1897.github.io/profile.png",
   "jobTitle": "Researcher",
-  "email": "mailto:marco.simoni@iit.cnr.it",
+  "email": "mailto:marco.simoni0711@gmail.com",
   "affiliation": {
-    "@type": "Organization",
-    "name": "Institute of Informatics and Telematics (IIT), National Research Council (CNR)"
+    "@type": "CollegeOrUniversity",
+    "name": "Scuola Superiore Sant'Anna",
+    "department": "Department of Excellence in Robotics and AI"
   },
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "Sapienza University of Rome"
   },
+  "identifier": "https://orcid.org/0009-0000-4170-503X",
   "knowsAbout": ["Large Language Models", "Reinforcement Learning", "LLM Alignment", "Cybersecurity", "Knowledge Graphs"],
   "sameAs": [
+    "https://orcid.org/0009-0000-4170-503X",
     "https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en",
     "https://github.com/winstonsmith1897",
     "https://www.linkedin.com/in/marco-simoni-ba1a06242/",
@@ -333,6 +336,69 @@ section.tinted { background: var(--bg-alt); border-block: 1px solid var(--border
 }
 
 /* ============================================================
+   Experience timeline
+   ============================================================ */
+.sub-head {
+  margin: 2.75rem 0 1.25rem;
+  font-size: .82rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text-faint);
+}
+.sub-head:first-child { margin-top: 0; }
+
+.timeline { position: relative; margin: 0; padding: 0 0 0 1.8rem; list-style: none; max-width: 68ch; }
+.timeline::before {
+  content: ""; position: absolute;
+  left: 4px; top: .55rem; bottom: .55rem;
+  width: 2px; background: var(--border-strong);
+}
+.tl-item { position: relative; padding-bottom: 1.9rem; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+  content: ""; position: absolute;
+  left: -1.8rem; top: .45rem;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--bg-alt);
+}
+.tl-when { font-size: .78rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-faint); }
+.tl-role { margin: .2rem 0 .1rem; font-size: 1.05rem; font-weight: 650; letter-spacing: -.015em; }
+.tl-where { margin: 0 0 .55rem; font-size: .92rem; font-weight: 600; color: var(--accent-text); }
+.tl-item p { margin: 0 0 .35rem; color: var(--text-muted); font-size: .95rem; }
+.tl-item ul { margin: .35rem 0 0; padding-left: 1.15rem; color: var(--text-muted); font-size: .93rem; }
+.tl-item li { margin-bottom: .3rem; }
+.tl-item li::marker { color: var(--border-strong); }
+.tl-item strong { color: var(--text); font-weight: 600; }
+
+.eu-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.eu-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+}
+.eu-card h4 { margin: .5rem 0 .3rem; font-size: 1.04rem; font-weight: 650; letter-spacing: -.015em; }
+.eu-card p { margin: 0 0 .7rem; font-size: .93rem; color: var(--text-muted); }
+.eu-card strong { color: var(--text); font-weight: 600; }
+.role-tag {
+  display: inline-block;
+  padding: .18rem .55rem;
+  border-radius: 5px;
+  font-size: .69rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  background: var(--accent-soft); color: var(--accent-text);
+}
+.role-tag.muted { background: var(--surface-2); color: var(--text-faint); }
+
+.degrees { margin: 0; padding: 0; list-style: none; display: grid; gap: .75rem; max-width: 68ch; }
+.degrees li { display: flex; flex-wrap: wrap; gap: .2rem 1rem; align-items: baseline; }
+.degrees b { font-weight: 650; font-size: .99rem; }
+.degrees span { font-size: .89rem; color: var(--text-faint); }
+.degrees em { font-style: normal; color: var(--accent-text); font-weight: 600; font-size: .89rem; }
+
+/* ============================================================
    Papers
    ============================================================ */
 .filters { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.5rem; }
@@ -581,7 +647,7 @@ footer {
         actually cost something: cybersecurity.
       </p>
       <p class="affil">
-        <span><i class="fas fa-building-columns"></i> Researcher, IIT-CNR, Pisa</span>
+        <span><i class="fas fa-building-columns"></i> Researcher, Scuola Superiore Sant'Anna, Pisa</span>
         <span><i class="fas fa-user-graduate"></i> PhD, Sapienza University of Rome</span>
       </p>
 
@@ -595,11 +661,14 @@ footer {
       <!-- STATS:END -->
 
       <div class="actions">
-        <a class="btn btn-primary" href="mailto:marco.simoni@iit.cnr.it">
+        <a class="btn btn-primary" href="mailto:marco.simoni0711@gmail.com">
           <i class="fas fa-paper-plane"></i> Get in touch
         </a>
         <a class="btn btn-ghost" href="#papers">
           <i class="fas fa-book-open"></i> Read the papers
+        </a>
+        <a class="btn btn-ghost" href="Marco_Simoni_CV.pdf" target="_blank" rel="noopener">
+          <i class="fas fa-file-arrow-down"></i> Download CV
         </a>
         <nav class="socials" aria-label="Profiles elsewhere">
           <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
@@ -617,6 +686,7 @@ footer {
     <a class="nav-brand" href="#top">Marco Simoni</a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#papers">Papers</a>
       <a href="#projects">Projects</a>
       <a href="#writing">Writing</a>
@@ -637,17 +707,19 @@ footer {
       </div>
       <div class="prose">
         <p>
-          I am a researcher at the <strong>Institute of Informatics and Telematics (IIT–CNR)</strong> in Pisa,
-          where I study how <strong>reinforcement learning</strong> shapes the reasoning behaviour of
-          large language models. I hold a PhD from Sapienza University of Rome.
+          I am a researcher at <strong>Scuola Superiore Sant'Anna</strong> in Pisa, in the
+          Department of Excellence in Robotics and AI, where I work on
+          <strong>reinforcement learning for post-training and alignment</strong> of large language
+          and multimodal foundation models — policy optimisation, reward design, training stability.
+          I hold a PhD in Artificial Intelligence from Sapienza University of Rome.
         </p>
         <p>
           Most RL post-training methods optimise a reward and hope reasoning follows. My work looks at
-          what actually happens to the gradient: with <strong>GTPO</strong> I showed that group-relative
-          objectives push conflicting updates through tokens shared by rewarded and penalised completions,
-          and that fixing this removes the need for KL regularisation entirely. More recently, at
-          <strong>ACL 2026</strong>, we traced the hidden objective biases that group-based RL introduces
-          without anyone asking for them.
+          what actually happens to the gradient: with <strong>GTPO</strong>, now accepted at
+          <strong>TACL</strong>, I showed that group-relative objectives push conflicting updates
+          through tokens shared by rewarded and penalised completions, and that fixing this removes
+          the need for KL regularisation entirely. At <strong>ACL 2026</strong> we traced the hidden
+          objective biases that group-based RL introduces without anyone asking for them.
         </p>
         <p>
           I test these ideas in <strong>cybersecurity</strong> — vulnerability detection, threat intelligence,
@@ -666,7 +738,109 @@ footer {
     </div>
   </section>
 
-  <section id="papers" class="tinted">
+  <section id="experience" class="tinted">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p>Where the work has happened.</p>
+      </div>
+
+      <ul class="timeline">
+        <li class="tl-item">
+          <div class="tl-when">June 2026 — present</div>
+          <h3 class="tl-role">Researcher</h3>
+          <p class="tl-where">Scuola Superiore Sant'Anna, Pisa · Department of Excellence in Robotics and AI</p>
+          <p>
+            Reinforcement learning for <strong>post-training and alignment</strong> of large language
+            and multimodal foundation models: policy optimisation, reward design, and training stability.
+          </p>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-when">Oct 2025 — Sep 2026</div>
+          <h3 class="tl-role">AI Researcher — Horus, a predictive cybersecurity foundation model</h3>
+          <p class="tl-where">NetGroup</p>
+          <ul>
+            <li>
+              Built a <strong>hierarchical Transformer</strong> (~10M parameters) from scratch that
+              predicts the next attack from an attack sequence and autoregressively generates the
+              continuation of the campaign.
+            </li>
+            <li>
+              Trained on 80,000 samples across four features — country, threat group, industry, time —
+              reaching <strong>F1 = 0.60</strong> on next-attack prediction.
+            </li>
+          </ul>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-when">May — Dec 2025 · Mar — Apr 2026</div>
+          <h3 class="tl-role">AI Researcher — natural language to XACML policies</h3>
+          <p class="tl-where">CNR-IIT</p>
+          <ul>
+            <li>
+              A two-step LLM framework turning unstructured natural-language commands into compliant
+              <strong>U-XACML</strong> access and usage control policies, via an intermediate
+              structured JSON representation.
+            </li>
+            <li>
+              <strong>93%</strong> accuracy on policy generation, <strong>91%</strong> on ambiguous or
+              noisy input, and <strong>98%</strong> agreement with expert-defined policies —
+              generalising across smart home, smart office and healthcare settings.
+            </li>
+            <li>
+              Hybrid LLM + dedicated-library design, validated for reliable
+              <strong>on-device inference</strong> on constrained hardware.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3 class="sub-head">European projects</h3>
+      <div class="eu-grid">
+        <article class="eu-card">
+          <span class="role-tag">Task leader</span>
+          <h4>TURING — Trustworthy Unified Robust Intelligent Generative Systems</h4>
+          <p class="tl-when">Sep 2025 — present</p>
+          <p>
+            Led the development of <strong>adversarially robust training pipelines</strong> for
+            multimodal foundation models applied to complex physical-system simulations.
+          </p>
+        </article>
+
+        <article class="eu-card">
+          <span class="role-tag muted">Contributor</span>
+          <h4>SIFIS-HOME — Secure Interoperable Full-Stack IoT for Smart Homes</h4>
+          <p class="tl-when">Nov 2022 — Nov 2024 · H2020</p>
+          <p>
+            Implemented core modules of the Data Analytics Toolbox: the System Protection Manager,
+            the Application Manager and the Intrusion Detection System.
+          </p>
+          <div class="links">
+            <a class="link-pill" href="https://www.sifis-home.eu" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Project site</a>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="sub-head">Education</h3>
+      <ul class="degrees">
+        <li>
+          <b>PhD in Artificial Intelligence</b> <em>Excellence</em>
+          <span>Sapienza University of Rome · Cybersecurity curriculum · 2022–2026</span>
+        </li>
+        <li>
+          <b>MSc in Artificial Intelligence and Data Engineering</b> <em>110/110 cum laude</em>
+          <span>University of Pisa · 2020–2022</span>
+        </li>
+        <li>
+          <b>BSc in Electronic Engineering</b>
+          <span>University of Pisa · 2017–2020</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="papers">
     <div class="wrap">
       <div class="section-head">
         <h2>Papers</h2>
@@ -696,7 +870,18 @@ footer {
           </div>
           <h3><a href="https://www.sciencedirect.com/science/article/pii/S0020025526008704" target="_blank" rel="noopener">Concise Thoughts: Impact of Output Length on LLM Reasoning and Cost</a></h3>
           <p class="authors">S. Nayab, G. Rossolini, <span class="me">M. Simoni</span>, A. Saracino, G. Buttazzo, N. Manes, F. Giacomelli</p>
-          <div class="paper-foot">Information Sciences, Elsevier, art. 123939</div>
+          <div class="paper-foot">Information Sciences 757, Elsevier, art. 123939</div>
+        </li>
+
+        <li class="paper" data-tags="rl 2026">
+          <div class="paper-top">
+            <span class="venue is-journal">TACL 2026</span>
+            <span class="year">2026</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 18</span>
+          </div>
+          <h3><a href="https://arxiv.org/abs/2508.03772" target="_blank" rel="noopener">GTPO: Trajectory-Based Policy Optimization in Large Language Models</a></h3>
+          <p class="authors"><span class="me">M. Simoni</span>, A. Fontana, G. Rossolini, A. Saracino, P. Mori</p>
+          <div class="paper-foot">Transactions of the Association for Computational Linguistics (accepted) · arXiv:2508.03772 · <a href="https://github.com/winstonsmith1897/GTPO" target="_blank" rel="noopener">code</a></div>
         </li>
 
         <li class="paper" data-tags="rl 2026">
@@ -729,18 +914,7 @@ footer {
           </div>
           <h3><a href="https://dl.acm.org/doi/abs/10.1145/3672608.3707898" target="_blank" rel="noopener">MoRSE: Bridging the Gap in Cybersecurity Expertise with Retrieval Augmented Generation</a></h3>
           <p class="authors"><span class="me">M. Simoni</span>, A. Saracino, Vinod P., M. Conti</p>
-          <div class="paper-foot">Proc. of the 40th ACM/SIGAPP Symposium on Applied Computing</div>
-        </li>
-
-        <li class="paper" data-tags="rl 2025">
-          <div class="paper-top">
-            <span class="venue">arXiv</span>
-            <span class="year">2025</span>
-            <span class="cites"><i class="fas fa-quote-right"></i> 18</span>
-          </div>
-          <h3><a href="https://arxiv.org/abs/2508.03772" target="_blank" rel="noopener">GTPO: Stabilizing Group Relative Policy Optimization via Gradient and Entropy Control</a></h3>
-          <p class="authors"><span class="me">M. Simoni</span>, A. Fontana, G. Rossolini, A. Saracino, P. Mori</p>
-          <div class="paper-foot">arXiv:2508.03772 · <a href="https://github.com/winstonsmith1897/GTPO" target="_blank" rel="noopener">code</a></div>
+          <div class="paper-foot">Proc. of the 40th ACM/SIGAPP Symposium on Applied Computing, pp. 1213–1222</div>
         </li>
 
         <li class="paper" data-tags="rl security 2025">
@@ -773,7 +947,7 @@ footer {
           </div>
           <h3><a href="https://link.springer.com/chapter/10.1007/978-3-032-00639-4_19" target="_blank" rel="noopener">Leveraging Knowledge Graphs and LLMs for Structured Generation of Misinformation</a></h3>
           <p class="authors">S. Nayab, <span class="me">M. Simoni</span>, G. Rossolini</p>
-          <div class="paper-foot">International Conference on Availability, Reliability and Security</div>
+          <div class="paper-foot">Int. Conf. on Availability, Reliability and Security, Springer, pp. 334–350</div>
         </li>
 
         <li class="paper" data-tags="kg security 2025">
@@ -784,7 +958,7 @@ footer {
           </div>
           <h3><a href="https://www.scitepress.org/Papers/2025/136293/136293.pdf" target="_blank" rel="noopener">MATRIX: A Comprehensive Graph-based Framework for Malware Analysis and Threat Research</a></h3>
           <p class="authors"><span class="me">M. Simoni</span>, A. Saracino</p>
-          <div class="paper-foot">Proc. of the International Conference on Security and Cryptography</div>
+          <div class="paper-foot">Proc. of the 22nd Int. Conf. on Security and Cryptography (SECRYPT), pp. 495–502</div>
         </li>
 
         <li class="paper" data-tags="rl security 2025">
@@ -795,7 +969,7 @@ footer {
           </div>
           <h3><a href="https://link.springer.com/chapter/10.1007/978-3-032-00639-4_18" target="_blank" rel="noopener">Unmasking Model Behavior: How LLMs Reason on Vulnerability Detection</a></h3>
           <p class="authors">A. Fontana, <span class="me">M. Simoni</span></p>
-          <div class="paper-foot">International Conference on Availability, Reliability and Security</div>
+          <div class="paper-foot">Int. Conf. on Availability, Reliability and Security, Springer, pp. 316–333</div>
         </li>
 
         <li class="paper" data-tags="kg 2025">
@@ -833,13 +1007,13 @@ footer {
 
         <li class="paper" data-tags="security 2024">
           <div class="paper-top">
-            <span class="venue is-conference">SPIoT 2024</span>
+            <span class="venue is-conference">SecureComm 2024</span>
             <span class="year">2024</span>
             <span class="cites"><i class="fas fa-quote-right"></i> 2</span>
           </div>
           <h3><a href="https://link.springer.com/chapter/10.1007/978-3-031-94458-1_8" target="_blank" rel="noopener">Cybersecurity with LLMs and RAGs: Challenges and Innovations</a></h3>
           <p class="authors"><span class="me">M. Simoni</span>, A. Saracino</p>
-          <div class="paper-foot">International Conference on Security and Privacy in the Internet of Things</div>
+          <div class="paper-foot">Security and Privacy in Communication Networks (SecureComm)</div>
         </li>
 
         <li class="paper" data-tags="security 2023">
@@ -850,7 +1024,7 @@ footer {
           </div>
           <h3><a href="https://dl.acm.org/doi/abs/10.1145/3600160.3605057" target="_blank" rel="noopener">Graph-based Android Malware Detection and Categorization through BERT Transformer</a></h3>
           <p class="authors"><span class="me">M. Simoni</span>, A. Saracino</p>
-          <div class="paper-foot">Proc. of the 18th International Conference on Availability, Reliability and Security</div>
+          <div class="paper-foot">Proc. of the 18th Int. Conf. on Availability, Reliability and Security, pp. 1–7</div>
         </li>
 
       </ul>
@@ -858,7 +1032,7 @@ footer {
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="tinted">
     <div class="wrap">
       <div class="section-head">
         <h2>Projects</h2>
@@ -1063,7 +1237,7 @@ footer {
     </div>
   </section>
 
-  <section id="writing" class="tinted">
+  <section id="writing">
     <div class="wrap">
       <div class="section-head">
         <h2>Writing</h2>

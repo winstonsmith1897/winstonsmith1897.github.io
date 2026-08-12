@@ -13,127 +13,159 @@
     "  url     - canonical link, overriding Scholar's",
     "  code    - repository link, appended to the footer",
     "  tags    - filter chips: rl, security, kg (the year tag is added automatically)",
+    "  year    - override Scholar's year (it lags behind acceptance)",
     "  hide    - true to keep a Scholar entry off the site entirely"
   ],
-
   "onthehiddenobjectivebiasesofgroupbasedreinforcementlearning": {
     "title": "On the Hidden Objective Biases of Group-based Reinforcement Learning",
     "venue": "ACL 2026",
     "kind": "conference",
     "note": "Proc. of the 64th Annual Meeting of the ACL (Short Papers), pp. 109–121",
     "url": "https://aclanthology.org/2026.acl-short.11/",
-    "tags": ["rl"]
+    "tags": [
+      "rl"
+    ]
   },
-
   "concisethoughtsimpactofoutputlengthonllmreasoningandcost": {
     "title": "Concise Thoughts: Impact of Output Length on LLM Reasoning and Cost",
     "venue": "Information Sciences",
     "kind": "journal",
-    "note": "Information Sciences, Elsevier, art. 123939",
+    "note": "Information Sciences 757, Elsevier, art. 123939",
     "url": "https://www.sciencedirect.com/science/article/pii/S0020025526008704",
-    "tags": ["rl"]
+    "tags": [
+      "rl"
+    ]
   },
-
   "towardreliableandadaptivelargelanguagemodelsinthecybersecuritydomain": {
     "title": "Toward Reliable and Adaptive Large Language Models in the Cybersecurity Domain",
     "venue": "PhD Thesis",
     "kind": "thesis",
     "note": "Doctoral thesis, Sapienza University of Rome",
     "url": "https://iris.uniroma1.it/handle/11573/1760907",
-    "tags": ["rl", "security"]
+    "tags": [
+      "rl",
+      "security"
+    ]
   },
-
   "gtpostabilizinggrouprelativepolicyoptimizationviagradientandentropycontrol": {
-    "title": "GTPO: Stabilizing Group Relative Policy Optimization via Gradient and Entropy Control",
-    "venue": "arXiv",
-    "kind": "preprint",
-    "note": "arXiv:2508.03772",
+    "_note": "Accepted at TACL, July 2026. Scholar still lists the arXiv title, so both keys map here — whichever one Scholar reports, the card renders the published version.",
+    "title": "GTPO: Trajectory-Based Policy Optimization in Large Language Models",
+    "venue": "TACL 2026",
+    "kind": "journal",
+    "note": "Transactions of the Association for Computational Linguistics (accepted) · arXiv:2508.03772",
     "url": "https://arxiv.org/abs/2508.03772",
     "code": "https://github.com/winstonsmith1897/GTPO",
-    "tags": ["rl"]
+    "tags": [
+      "rl"
+    ],
+    "year": "2026"
   },
-
+  "gtpotrajectorybasedpolicyoptimizationinlargelanguagemodels": {
+    "title": "GTPO: Trajectory-Based Policy Optimization in Large Language Models",
+    "venue": "TACL 2026",
+    "kind": "journal",
+    "note": "Transactions of the Association for Computational Linguistics (accepted) · arXiv:2508.03772",
+    "url": "https://arxiv.org/abs/2508.03772",
+    "code": "https://github.com/winstonsmith1897/GTPO",
+    "tags": [
+      "rl"
+    ],
+    "year": "2026"
+  },
   "morsebridgingthegapincybersecurityexpertisewithretrievalaugmentedgeneration": {
     "title": "MoRSE: Bridging the Gap in Cybersecurity Expertise with Retrieval Augmented Generation",
     "venue": "ACM SAC 2025",
     "kind": "conference",
-    "note": "Proc. of the 40th ACM/SIGAPP Symposium on Applied Computing",
+    "note": "Proc. of the 40th ACM/SIGAPP Symposium on Applied Computing, pp. 1213–1222",
     "url": "https://dl.acm.org/doi/abs/10.1145/3672608.3707898",
-    "tags": ["security"]
+    "tags": [
+      "security"
+    ]
   },
-
   "graphbasedandroidmalwaredetectionandcategorizationthroughberttransformer": {
     "title": "Graph-based Android Malware Detection and Categorization through BERT Transformer",
     "venue": "ARES 2023",
     "kind": "conference",
-    "note": "Proc. of the 18th International Conference on Availability, Reliability and Security",
+    "note": "Proc. of the 18th Int. Conf. on Availability, Reliability and Security, pp. 1–7",
     "url": "https://dl.acm.org/doi/abs/10.1145/3600160.3605057",
-    "tags": ["security"]
+    "tags": [
+      "security"
+    ]
   },
-
   "improvingllmreasoningforvulnerabilitydetectionviagrouprelativepolicyoptimization": {
     "title": "Improving LLM Reasoning for Vulnerability Detection via Group Relative Policy Optimization",
     "venue": "arXiv",
     "kind": "preprint",
     "note": "arXiv:2507.03051 · * equal contribution",
     "url": "https://arxiv.org/abs/2507.03051",
-    "tags": ["rl", "security"]
+    "tags": [
+      "rl",
+      "security"
+    ]
   },
-
   "ondevicederivationofiotusagecontrolpoliciesautomatinguxacmlpolicygenerationfromnaturallanguagewithllmsinsmarthomesenvironments": {
     "title": "On-device Derivation of IoT Usage Control Policies: Automating U-XACML Policy Generation from Natural Language with LLMs in Smart Home Environments",
     "venue": "FGCS",
     "kind": "journal",
     "note": "Future Generation Computer Systems, Elsevier, art. 108067",
     "url": "https://www.sciencedirect.com/science/article/pii/S0167739X25003620",
-    "tags": ["security"]
+    "tags": [
+      "security"
+    ]
   },
-
   "leveragingknowledgegraphsandllmsforstructuredgenerationofmisinformation": {
     "title": "Leveraging Knowledge Graphs and LLMs for Structured Generation of Misinformation",
     "venue": "ARES 2025",
     "kind": "conference",
-    "note": "International Conference on Availability, Reliability and Security",
+    "note": "Int. Conf. on Availability, Reliability and Security, Springer, pp. 334–350",
     "url": "https://link.springer.com/chapter/10.1007/978-3-032-00639-4_19",
-    "tags": ["kg", "security"]
+    "tags": [
+      "kg",
+      "security"
+    ]
   },
-
   "matrixacomprehensivegraphbasedframeworkformalwareanalysisandthreatresearch": {
     "title": "MATRIX: A Comprehensive Graph-based Framework for Malware Analysis and Threat Research",
     "venue": "SECRYPT 2025",
     "kind": "conference",
-    "note": "Proc. of the International Conference on Security and Cryptography",
+    "note": "Proc. of the 22nd Int. Conf. on Security and Cryptography (SECRYPT), pp. 495–502",
     "url": "https://www.scitepress.org/Papers/2025/136293/136293.pdf",
-    "tags": ["kg", "security"]
+    "tags": [
+      "kg",
+      "security"
+    ]
   },
-
   "cybersecuritywithllmsandragschallengesandinnovations": {
     "title": "Cybersecurity with LLMs and RAGs: Challenges and Innovations",
-    "venue": "SPIoT 2024",
+    "venue": "SecureComm 2024",
     "kind": "conference",
-    "note": "International Conference on Security and Privacy in the Internet of Things",
+    "note": "Security and Privacy in Communication Networks (SecureComm)",
     "url": "https://link.springer.com/chapter/10.1007/978-3-031-94458-1_8",
-    "tags": ["security"]
+    "tags": [
+      "security"
+    ]
   },
-
   "unmaskingmodelbehaviorhowllmsreasononvulnerabilitydetection": {
     "title": "Unmasking Model Behavior: How LLMs Reason on Vulnerability Detection",
     "venue": "ARES 2025",
     "kind": "conference",
-    "note": "International Conference on Availability, Reliability and Security",
+    "note": "Int. Conf. on Availability, Reliability and Security, Springer, pp. 316–333",
     "url": "https://link.springer.com/chapter/10.1007/978-3-032-00639-4_18",
-    "tags": ["rl", "security"]
+    "tags": [
+      "rl",
+      "security"
+    ]
   },
-
   "kgquesttemplatedrivenqagenerationfromknowledgegraphswithllmbasedrefinement": {
     "title": "KGQuest: Template-Driven QA Generation from Knowledge Graphs with LLM-Based Refinement",
     "venue": "arXiv",
     "kind": "preprint",
     "note": "arXiv:2511.11258",
     "url": "https://arxiv.org/abs/2511.11258",
-    "tags": ["kg"]
+    "tags": [
+      "kg"
+    ]
   },
-
   "titangraphexecutablereasoningforcyberthreatintelligence": {
     "title": "TITAN: Graph-Executable Reasoning for Cyber Threat Intelligence",
     "venue": "arXiv",
@@ -141,9 +173,11 @@
     "note": "arXiv:2510.14670",
     "url": "https://arxiv.org/abs/2510.14670",
     "code": "https://github.com/cti-graph-reasoner/TITAN",
-    "tags": ["kg", "security"]
+    "tags": [
+      "kg",
+      "security"
+    ]
   },
-
   "intelligenzaartificialeinmedicinaeresponsabilitascenarigiuridiciemedicolegali": {
     "_note": "Key is accent-folded: 'responsabilità' -> 'responsabilita'.",
     "title": "Intelligenza artificiale in medicina e responsabilità: scenari giuridici e medico-legali",

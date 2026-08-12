@@ -196,7 +196,8 @@ def render_paper(pub: dict, meta: dict) -> str:
     )
     venue = meta.get("venue", "Preprint")
     kind = meta.get("kind", "")
-    year = pub.get("year", "")
+    # Scholar keeps the preprint year after a paper is accepted elsewhere.
+    year = str(meta.get("year") or pub.get("year", ""))
     tags = list(meta.get("tags", []))
     if year:
         tags.append(year)
@@ -286,8 +287,12 @@ def main() -> int:
             continue
         pubs.append((pub, meta))
 
-    # Newest first; within a year, most cited first.
-    pubs.sort(key=lambda p: (int(p[0]["year"] or 0), p[0]["citations"]), reverse=True)
+    # Newest first; within a year, most cited first. A curated `year` wins over
+    # Scholar's, which lags behind acceptance.
+    pubs.sort(
+        key=lambda p: (int(p[1].get("year") or p[0]["year"] or 0), p[0]["citations"]),
+        reverse=True,
+    )
 
     for title in unknown:
         print(f"note: no entry in {META} for {title!r} — rendered with defaults",
