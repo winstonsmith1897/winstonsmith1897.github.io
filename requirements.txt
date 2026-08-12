@@ -1,1 +1,4 @@
-scholarly
+# update.py runs on the Python standard library alone — there is nothing to
+# install. The `scholarly` package used to live here, but it pulled in a heavy
+# dependency tree and still got blocked by Google Scholar, so update.py now
+# scrapes the profile directly.

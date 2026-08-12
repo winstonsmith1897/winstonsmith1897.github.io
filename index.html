@@ -1,439 +1,1237 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marco Simoni - Academic Page</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --bg-color: #fafafa;
-      --text-color: #333;
-      --card-bg: #fff;
-      --header-bg: linear-gradient(135deg, #2c3e50, #3498db);
-      --link-hover: #f1c40f;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marco Simoni — LLM Alignment &amp; Reinforcement Learning</title>
+
+<meta name="description" content="Marco Simoni — researcher at IIT-CNR, Pisa. LLM alignment, reinforcement learning (GRPO/GTPO), reasoning, and AI for cybersecurity. Papers, projects and code.">
+<meta name="author" content="Marco Simoni">
+<link rel="canonical" href="https://winstonsmith1897.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Marco Simoni — LLM Alignment &amp; Reinforcement Learning">
+<meta property="og:description" content="Researcher at IIT-CNR, Pisa. LLM alignment, reinforcement learning (GRPO/GTPO), reasoning, and AI for cybersecurity.">
+<meta property="og:url" content="https://winstonsmith1897.github.io/">
+<meta property="og:image" content="https://winstonsmith1897.github.io/profile.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Marco Simoni — LLM Alignment &amp; Reinforcement Learning">
+<meta name="twitter:description" content="Researcher at IIT-CNR, Pisa. LLM alignment, reinforcement learning, and AI for cybersecurity.">
+<meta name="twitter:image" content="https://winstonsmith1897.github.io/profile.png">
+<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+<link rel="icon" href="profile.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script>
+  /* Applied before first paint to avoid a flash of the wrong theme. */
+  (function () {
+    try {
+      var s = localStorage.getItem("theme");
+      var t = s || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {
+      document.documentElement.setAttribute("data-theme", "light");
     }
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #f0f0f0;
-      --card-bg: #1e1e1e;
-      --header-bg: linear-gradient(135deg, #000, #222);
-      --link-hover: #f39c12;
-    }
-    body { font-family: 'Poppins', sans-serif; max-width: 1100px; margin: 0 auto; background: var(--bg-color); color: var(--text-color); line-height: 1.6; transition: background 0.3s, color 0.3s; }
-    header { text-align: center; padding: 2rem 1rem; background: var(--header-bg); color: white; }
-    header img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid white; margin-bottom: 1rem; }
-    h1 { font-size: 2.6rem; margin-bottom: 0.3rem; }
-    p.subtitle { font-size: 1.2rem; color: #eee; margin-bottom: 1rem; }
-    .social-links a { margin: 0 0.7rem; font-size: 1.5rem; color: white; text-decoration: none; transition: color 0.3s; }
-    .social-links a:hover { color: var(--link-hover); }
+  })();
+</script>
 
-    /* Navbar */
-    nav { background: #333; padding: 0.8rem; display: flex; justify-content: center; align-items: center; gap: 2rem; position: sticky; top: 0; z-index: 1000; }
-    nav a { color: white; text-decoration: none; font-weight: bold; position: relative; font-size: 1rem; }
-    nav a::after { content: ""; display: block; height: 2px; background: var(--link-hover); transition: width 0.3s; width: 0; margin: auto; }
-    nav a:hover::after { width: 100%; }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marco Simoni",
+  "url": "https://winstonsmith1897.github.io/",
+  "image": "https://winstonsmith1897.github.io/profile.png",
+  "jobTitle": "Researcher",
+  "email": "mailto:marco.simoni@iit.cnr.it",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Institute of Informatics and Telematics (IIT), National Research Council (CNR)"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Sapienza University of Rome"
+  },
+  "knowsAbout": ["Large Language Models", "Reinforcement Learning", "LLM Alignment", "Cybersecurity", "Knowledge Graphs"],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en",
+    "https://github.com/winstonsmith1897",
+    "https://www.linkedin.com/in/marco-simoni-ba1a06242/",
+    "https://medium.com/@marco.simoni0711"
+  ]
+}
+</script>
 
-    /* Toggle button */
-    .theme-toggle { margin-left: auto; cursor: pointer; color: white; font-size: 1.2rem; }
+<style>
+/* ============================================================
+   Tokens
+   ============================================================ */
+:root {
+  --bg:            #ffffff;
+  --bg-alt:        #f6f7fb;
+  --surface:       #ffffff;
+  --surface-2:     #f2f4f9;
+  --text:          #14161d;
+  --text-muted:    #5b6172;
+  --text-faint:    #868da0;
+  --border:        #e4e7f0;
+  --border-strong: #cfd4e3;
 
-    main { padding: 2rem; }
-    h2 { margin-top: 2.5rem; border-bottom: 2px solid #ddd; padding-bottom: 0.4rem; }
+  --accent:        #4338ca;
+  --accent-soft:   #eef0ff;
+  --accent-text:   #4338ca;
+  --accent-2:      #b45309;
+  --accent-2-soft: #fef3c7;
 
-    /* Alternating section background */
-    section:nth-of-type(even) { background: rgba(0,0,0,0.03); padding: 2rem; border-radius: 12px; }
+  --hero-bg:       radial-gradient(1100px 520px at 12% -10%, #dfe3ff 0%, transparent 62%),
+                   radial-gradient(900px 480px at 88% 0%,  #ffe7cc 0%, transparent 58%),
+                   linear-gradient(180deg, #fbfbfe 0%, #ffffff 100%);
 
-    /* Papers grid */
-    ul.paper-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1rem; padding: 0; list-style: none; }
-    ul.paper-list li { background: var(--card-bg); padding: 1rem 1.5rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); transition: transform 0.2s, box-shadow 0.3s, background 0.3s; }
-    ul.paper-list li:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-    .paper-title { font-weight: bold; font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--text-color); }
-    .paper-title a { color: inherit; text-decoration: none; }
-    .paper-title a:hover { text-decoration: underline; color: #2980b9; }
-    .paper-meta { font-size: 0.9rem; color: #888; }
+  --shadow-sm:  0 1px 2px rgba(18, 22, 40, .05), 0 1px 3px rgba(18, 22, 40, .04);
+  --shadow-md:  0 4px 12px rgba(18, 22, 40, .07), 0 1px 3px rgba(18, 22, 40, .05);
+  --shadow-lg:  0 18px 40px rgba(18, 22, 40, .11);
 
-    /* Articles */
-    .article-card { background: var(--card-bg); padding: 1.5rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); transition: transform 0.2s, background 0.3s; }
-    .article-card:hover { transform: translateY(-5px); }
+  --radius:    14px;
+  --radius-sm: 10px;
+  --radius-lg: 20px;
+  --maxw:      1120px;
+}
 
-    /* Projects */
-    .project-card { background: var(--card-bg); padding: 1.5rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); transition: background 0.3s; }
-    .project-card h3 { margin-top: 0; }
-    .project-card iframe { width: 100%; height: 315px; max-width: 700px; border-radius: 8px; }
+[data-theme="dark"] {
+  --bg:            #0b0d14;
+  --bg-alt:        #0f121b;
+  --surface:       #151925;
+  --surface-2:     #1b2030;
+  --text:          #e8eaf2;
+  --text-muted:    #a2a9bd;
+  --text-faint:    #757d94;
+  --border:        #242a3a;
+  --border-strong: #333b50;
 
+  --accent:        #8b93ff;
+  --accent-soft:   #1e2340;
+  --accent-text:   #a5abff;
+  --accent-2:      #f0b45e;
+  --accent-2-soft: #33260f;
 
+  --hero-bg:       radial-gradient(1100px 520px at 12% -10%, #1b2145 0%, transparent 62%),
+                   radial-gradient(900px 480px at 88% 0%,  #33240f 0%, transparent 58%),
+                   linear-gradient(180deg, #0d1018 0%, #0b0d14 100%);
 
+  --shadow-sm:  0 1px 2px rgba(0, 0, 0, .4);
+  --shadow-md:  0 4px 14px rgba(0, 0, 0, .45);
+  --shadow-lg:  0 18px 40px rgba(0, 0, 0, .55);
+}
 
-    header { position: relative; overflow: hidden; }
-    header::after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 50%),
-                  radial-gradient(circle at 80% 10%, rgba(255,255,255,0.12), transparent 45%),
-                  radial-gradient(circle at 60% 90%, rgba(255,255,255,0.10), transparent 55%);
-      transform: rotate(8deg);
-      pointer-events:none;
-    }
-    .cta-row{ display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; margin-top:1.2rem; position:relative; z-index:1; }
-    .btn{
-      display:inline-flex; align-items:center; gap:0.55rem;
-      padding:0.7rem 1.05rem; border-radius:999px;
-      text-decoration:none; font-weight:700; font-size:0.95rem;
-      border:1px solid rgba(255,255,255,0.25);
-      transition: transform .2s, box-shadow .25s, background .25s;
-    }
-    .btn.primary{ background: rgba(255,255,255,0.95); color:#1b1b1b; }
-    .btn.ghost{ background: rgba(0,0,0,0.12); color:white; }
-    .btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+/* ============================================================
+   Base
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
 
-    :root{
-  --shadow: 0 10px 30px rgba(0,0,0,0.07);
-  --shadow-hover: 0 18px 45px rgba(0,0,0,0.14);
-  --border: rgba(0,0,0,0.08);
-    }
-    [data-theme="dark"]{
-      --shadow: 0 10px 30px rgba(0,0,0,0.45);
-      --shadow-hover: 0 18px 45px rgba(0,0,0,0.55);
-      --border: rgba(255,255,255,0.10);
-    }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
-    main{ padding: 2.2rem; }
-    .project-card, .article-card, ul.paper-list li{
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(6px);
-    }
-    .project-card:hover, .article-card:hover, ul.paper-list li:hover{
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-    }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
 
-    .badges{ display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1rem; }
-    .badge{
-      display:inline-flex; align-items:center; gap:0.45rem;
-      padding:0.45rem 0.75rem;
-      border-radius:999px;
-      background: rgba(52,152,219,0.10);
-      border: 1px solid var(--border);
-      font-weight:600; font-size:0.9rem;
-    }
-    [data-theme="dark"] .badge{ background: rgba(243,156,18,0.12); }
+img, video { max-width: 100%; display: block; }
 
-    html{ scroll-behavior:smooth; }
-    section{ scroll-margin-top: 90px; }
+a { color: var(--accent-text); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
-    footer { margin-top: 3rem; padding: 1rem; text-align: center; font-size: 0.85rem; color: #888; border-top: 1px solid #eee; }
-  </style>
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 200;
+  background: var(--accent); color: #fff; padding: .7rem 1.1rem;
+  border-radius: 0 0 var(--radius-sm) 0; font-weight: 600;
+}
+.skip-link:focus { left: 0; }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  background: var(--hero-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 4.5rem 0 3.25rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.avatar {
+  width: 152px; height: 152px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.eyebrow {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin: 0 0 .55rem;
+}
+
+.hero h1 {
+  margin: 0 0 .35rem;
+  font-size: clamp(2.1rem, 5.2vw, 3.15rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.08;
+}
+
+.tagline {
+  margin: 0 0 .5rem;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  font-weight: 500;
+  color: var(--text-muted);
+  max-width: 46rem;
+}
+
+.affil {
+  margin: 0 0 1.35rem;
+  font-size: .95rem;
+  color: var(--text-faint);
+}
+.affil i { width: 1.05em; text-align: center; margin-right: .25rem; }
+.affil span + span::before { content: "·"; margin: 0 .6rem; color: var(--border-strong); }
+
+/* Scholar stats */
+.stats { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 1.5rem; padding: 0; list-style: none; }
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .5rem .9rem;
+  box-shadow: var(--shadow-sm);
+  min-width: 92px;
+}
+.stat b { display: block; font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
+.stat span { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; color: var(--text-faint); font-weight: 600; }
+
+/* Buttons */
+.actions { display: flex; flex-wrap: wrap; gap: .65rem; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .68rem 1.15rem;
+  border-radius: 999px;
+  font-size: .93rem; font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+.btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow-md); }
+.btn-primary:hover { box-shadow: var(--shadow-lg); }
+[data-theme="dark"] .btn-primary { color: #0b0d14; }
+.btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent-text); }
+
+.socials { display: flex; gap: .25rem; margin-left: .35rem; }
+.socials a {
+  display: grid; place-items: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: color .2s, background .2s, border-color .2s, transform .15s;
+}
+.socials a:hover { color: var(--accent-text); background: var(--surface); border-color: var(--border); transform: translateY(-2px); text-decoration: none; }
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; align-items: center; gap: .35rem; height: 56px; }
+.nav-brand { font-weight: 700; letter-spacing: -.02em; color: var(--text); margin-right: auto; }
+.nav-brand:hover { text-decoration: none; color: var(--accent-text); }
+.nav-links { display: flex; gap: .15rem; }
+.nav-links a {
+  padding: .45rem .8rem;
+  border-radius: var(--radius-sm);
+  font-size: .92rem; font-weight: 500;
+  color: var(--text-muted);
+  transition: color .2s, background .2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text); background: var(--surface-2); text-decoration: none; }
+
+.icon-btn {
+  display: grid; place-items: center;
+  width: 38px; height: 38px;
+  margin-left: .35rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: .95rem;
+  transition: color .2s, border-color .2s;
+}
+.icon-btn:hover { color: var(--accent-text); border-color: var(--accent); }
+
+/* ============================================================
+   Sections
+   ============================================================ */
+main { padding-bottom: 1rem; }
+section { padding: 4rem 0 .5rem; scroll-margin-top: 72px; }
+section.tinted { background: var(--bg-alt); border-block: 1px solid var(--border); padding-bottom: 3.5rem; margin-top: 3rem; }
+
+.section-head { margin-bottom: 1.75rem; }
+.section-head h2 {
+  margin: 0 0 .3rem;
+  font-size: clamp(1.55rem, 3.2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+.section-head p { margin: 0; color: var(--text-muted); font-size: .97rem; }
+
+.prose { max-width: 62ch; font-size: 1.03rem; color: var(--text-muted); }
+.prose strong { color: var(--text); font-weight: 600; }
+.prose p { margin: 0 0 1rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .42rem .85rem;
+  border-radius: 999px;
+  font-size: .85rem; font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  border: 1px solid var(--border);
+}
+
+/* ============================================================
+   Papers
+   ============================================================ */
+.filters { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.5rem; }
+.filter {
+  padding: .42rem .9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-muted);
+  font: inherit; font-size: .86rem; font-weight: 600;
+  cursor: pointer;
+  transition: all .18s ease;
+}
+.filter:hover { border-color: var(--accent); color: var(--accent-text); }
+.filter[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+[data-theme="dark"] .filter[aria-pressed="true"] { color: #0b0d14; }
+
+.papers { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1rem; padding: 0; margin: 0; list-style: none; }
+
+.paper {
+  display: flex; flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .25s ease, border-color .2s ease;
+}
+.paper:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+.paper.is-hidden { display: none; }
+
+.paper-top { display: flex; align-items: center; gap: .45rem; flex-wrap: wrap; margin-bottom: .6rem; }
+
+.venue {
+  display: inline-flex; align-items: center;
+  padding: .2rem .6rem;
+  border-radius: 6px;
+  font-size: .71rem; font-weight: 700;
+  letter-spacing: .045em; text-transform: uppercase;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.venue.is-journal    { background: var(--accent-soft);   color: var(--accent-text); border-color: transparent; }
+.venue.is-conference { background: var(--accent-soft);   color: var(--accent-text); border-color: transparent; }
+.venue.is-thesis     { background: var(--accent-2-soft); color: var(--accent-2);    border-color: transparent; }
+
+.year { font-size: .78rem; font-weight: 600; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+
+.cites {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .78rem; font-weight: 600;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.cites i { font-size: .72rem; }
+
+.paper h3 { margin: 0 0 .5rem; font-size: 1.02rem; font-weight: 650; line-height: 1.4; letter-spacing: -.011em; }
+.paper h3 a { color: var(--text); }
+.paper h3 a:hover { color: var(--accent-text); }
+
+.authors { margin: 0 0 .1rem; font-size: .84rem; color: var(--text-faint); line-height: 1.5; }
+.authors .me { color: var(--text-muted); font-weight: 700; }
+
+.paper-foot { margin-top: auto; padding-top: .75rem; font-size: .82rem; color: var(--text-faint); }
+.paper-foot a { font-weight: 600; }
+
+/* ============================================================
+   Projects
+   ============================================================ */
+.projects { display: grid; gap: 1.5rem; }
+
+.project {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .25s ease, border-color .2s ease;
+}
+.project:hover { box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+
+.project-head { padding: 1.6rem 1.75rem 0; }
+.project-head h3 { margin: 0 0 .3rem; font-size: 1.32rem; font-weight: 700; letter-spacing: -.022em; }
+.project-kicker { margin: 0 0 1rem; font-size: .87rem; font-weight: 600; letter-spacing: .045em; text-transform: uppercase; color: var(--accent-text); }
+.project-body { padding: 0 1.75rem 1.6rem; }
+.project-body p { margin: 0 0 .9rem; color: var(--text-muted); font-size: .97rem; }
+.project-body strong { color: var(--text); font-weight: 600; }
+.project-body ol, .project-body ul { margin: 0 0 .9rem; padding-left: 1.2rem; color: var(--text-muted); font-size: .97rem; }
+.project-body li { margin-bottom: .5rem; }
+.project-body li::marker { color: var(--accent-text); font-weight: 700; }
+
+.media { margin: 0 0 1.4rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: var(--surface-2); }
+.media.embed { position: relative; padding-top: 56.25%; }
+.media.embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.media video, .media img { width: 100%; height: auto; }
+
+/* Click-to-play: the long screencasts are several MB each, so nothing is
+   fetched until the visitor actually asks for it. */
+.media.playable { position: relative; }
+.media.playable .play {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  width: 100%; padding: 0;
+  border: 0; cursor: pointer;
+  background: rgba(9, 11, 20, .34);
+  transition: background .2s ease;
+}
+.media.playable:hover .play { background: rgba(9, 11, 20, .18); }
+.media.playable .play > span {
+  display: grid; place-items: center;
+  width: 62px; height: 62px;
+  padding-left: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .95);
+  color: #14161d;
+  font-size: 1.35rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+  transition: transform .18s ease;
+}
+.media.playable:hover .play > span { transform: scale(1.08); }
+.media.playable .weight {
+  position: absolute; right: .6rem; bottom: .6rem;
+  padding: .18rem .5rem;
+  border-radius: 5px;
+  background: rgba(9, 11, 20, .7);
+  color: #fff;
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: .02em;
+  pointer-events: none;
+}
+
+.demos { display: grid; gap: 1.15rem; margin: 0 0 1.3rem; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+.demos figure { margin: 0; }
+.demos figcaption { margin-top: .5rem; font-size: .84rem; color: var(--text-faint); text-align: center; }
+
+.links { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.1rem; }
+.link-pill {
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .48rem .9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: .86rem; font-weight: 600;
+  transition: color .2s, border-color .2s, transform .15s;
+}
+.link-pill:hover { color: var(--accent-text); border-color: var(--accent); transform: translateY(-1px); text-decoration: none; }
+
+.stack { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.1rem; }
+.tech {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: .74rem; font-weight: 500;
+  padding: .24rem .55rem;
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+/* ============================================================
+   Articles
+   ============================================================ */
+.articles { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .25s ease, border-color .2s;
+}
+.article:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+.article h3 { margin: .4rem 0 .6rem; font-size: 1.1rem; font-weight: 650; line-height: 1.4; letter-spacing: -.015em; }
+.article h3 a { color: var(--text); }
+.article h3 a:hover { color: var(--accent-text); }
+.article p { margin: 0; color: var(--text-muted); font-size: .93rem; }
+.article-src { font-size: .74rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--text-faint); }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  margin-top: 4rem;
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
+  font-size: .88rem;
+  color: var(--text-faint);
+}
+.footer-inner { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; }
+.footer-inner a { color: var(--text-muted); }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 780px) {
+  .hero { padding: 2.75rem 0 2.25rem; }
+  .hero-grid { grid-template-columns: 1fr; gap: 1.4rem; text-align: center; justify-items: center; }
+  .avatar { width: 118px; height: 118px; }
+  .tagline, .affil { margin-inline: auto; }
+  .affil span { display: block; }
+  .affil span + span::before { content: none; }
+  .actions, .chips, .filters { justify-content: center; }
+  /* 2x2 rather than an orphaned fourth tile. */
+  .stats { display: grid; grid-template-columns: 1fr 1fr; max-width: 320px; margin-inline: auto; }
+  .stat { min-width: 0; text-align: center; }
+  .socials { margin-left: 0; }
+  .nav-brand { display: none; }
+  .nav-inner { justify-content: center; height: auto; padding: .5rem 0; flex-wrap: wrap; }
+  .nav-links { flex: 1; justify-content: center; flex-wrap: wrap; }
+  .nav-links a { padding: .4rem .6rem; font-size: .86rem; }
+  section { padding-top: 2.75rem; }
+  .papers { grid-template-columns: 1fr; }
+  .project-head { padding: 1.25rem 1.25rem 0; }
+  .project-body { padding: 0 1.25rem 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+@media print {
+  .nav, .actions, .socials, .filters, .media, .demos { display: none !important; }
+  body { background: #fff; color: #000; }
+  .paper, .project, .article { break-inside: avoid; box-shadow: none; }
+}
+</style>
 </head>
-<body data-theme="light">
-  <header>
-    <img src="profile.png" alt="Marco Simoni">
-    <h1>Marco Simoni</h1>
-    <p class="subtitle">Researcher in AI, LLMs, Reinforcement Learning & Cybersecurity</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/marco-simoni-ba1a06242/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/winstonsmith1897" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-      <a href="https://medium.com/@marco.simoni0711" target="_blank"><i class="fab fa-medium"></i></a>
-      <a href="mailto:marco.simoni@iit.cnr.it"><i class="fas fa-envelope"></i></a>
-    </div>
 
-  <div class="cta-row">
-    <a class="btn primary" href="mailto:marco.simoni@iit.cnr.it">
-      <i class="fas fa-paper-plane"></i> Work with me
-    </a>
-    <a class="btn ghost" href="#projects">
-      <i class="fas fa-flask"></i> See projects
-    </a>
-  </div>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#papers">Papers</a>
-    <a href="#articles">Articles</a>
-    <a href="#projects">Projects</a>
-    <div class="theme-toggle" onclick="toggleTheme()">
-      <i class="fas fa-moon"></i>
-    </div>
-  </nav>
-
-  <main>
-    <section id="about">
-      <div class="badges">
-      <span class="badge"><i class="fas fa-brain"></i> LLM Alignment</span>
-      <span class="badge"><i class="fas fa-robot"></i> RLHF / GRPO / GTPO</span>
-      <span class="badge"><i class="fas fa-shield-halved"></i> Cybersecurity AI</span>
-      <span class="badge"><i class="fas fa-diagram-project"></i> Knowledge Graphs</span>
-    </div>
-
-      <h2>About Me</h2>
-      <p>
-        I am a researcher passionate about <b>Large Language Models (LLMs)</b> 
-        and their alignment through <b>Reinforcement Learning (RL)</b>. 
-        My work explores how advanced RL techniques such as GRPO and GTPO 
-        can improve reasoning stability and trustworthiness in LLMs. 
-        While I have applied these methods to domains like cybersecurity, 
-        my main focus is on pushing the boundaries of <b>AI alignment</b> 
-        and building smarter, more reliable models.
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <img class="avatar" src="profile.png" alt="Portrait of Marco Simoni" width="152" height="152">
+    <div>
+      <p class="eyebrow">LLM Alignment &amp; Reinforcement Learning</p>
+      <h1>Marco Simoni</h1>
+      <p class="tagline">
+        I work on making large language models reason more reliably — through reinforcement
+        learning methods that stay stable under pressure, and by testing them where mistakes
+        actually cost something: cybersecurity.
       </p>
-    </section>
+      <p class="affil">
+        <span><i class="fas fa-building-columns"></i> Researcher, IIT-CNR, Pisa</span>
+        <span><i class="fas fa-user-graduate"></i> PhD, Sapienza University of Rome</span>
+      </p>
 
-    <section id="papers">
-      <h2>Papers</h2>
-      <ul class="paper-list">
+      <!-- STATS:START -->
+      <ul class="stats">
+        <li class="stat"><b>216</b><span>Citations</span></li>
+        <li class="stat"><b>6</b><span>h-index</span></li>
+        <li class="stat"><b>4</b><span>i10-index</span></li>
+        <li class="stat"><b>15</b><span>Publications</span></li>
+      </ul>
+      <!-- STATS:END -->
 
-        <li>
-          <div class="paper-title"><a href="https://arxiv.org/abs/2407.19825" target="_blank">Concise thoughts: Impact of output length on llm reasoning and cost</a></div>
-          <div class="paper-meta">Year: 2024 • Citations: 70</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/3672608.3707898" target="_blank">MoRSE: Bridging the gap in cybersecurity expertise with retrieval augmented generation</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 16</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://dl.acm.org/doi/abs/10.1145/3600160.3605057" target="_blank">Graph-based android malware detection and categorization through bert transformer</a></div>
-          <div class="paper-meta">Year: 2023 • Citations: 11</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://arxiv.org/abs/2507.03051" target="_blank">Improving LLM Reasoning for Vulnerability Detection via Group Relative Policy Optimization</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 3</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0167739X25003620" target="_blank">On-device derivation of IoT usage control policies: Automating U-XACML policy generation from natural language with LLMs in smart homes environments</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 2</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250803772S/abstract" target="_blank">GTPO: Trajectory-Based Policy Optimization in Large Language Models</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 2</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://link.springer.com/chapter/10.1007/978-3-032-00639-4_18" target="_blank">Unmasking model behavior: How llms reason on vulnerability detection</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 1</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://link.springer.com/chapter/10.1007/978-3-032-00639-4_19" target="_blank">Leveraging knowledge graphs and llms for structured generation of misinformation</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 1</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://www.scitepress.org/Papers/2025/136293/136293.pdf" target="_blank">MATRIX: A comprehensive graph-based framework for malware analysis and threat research</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 1</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://link.springer.com/chapter/10.1007/978-3-031-94458-1_8" target="_blank">Cybersecurity with llms and rags: Challenges and innovations</a></div>
-          <div class="paper-meta">Year: 2024 • Citations: 1</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://arxiv.org/abs/2511.11258" target="_blank">KGQuest: Template-Driven QA Generation from Knowledge Graphs with LLM-Based Refinement</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 0</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://arxiv.org/abs/2510.14670" target="_blank">TITAN: Graph-Executable Reasoning for Cyber Threat Intelligence</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 0</div>
-        </li>
-
-        <li>
-          <div class="paper-title"><a href="https://arxiv.org/abs/2508.03772" target="_blank">GTPO: Stabilizing Group Relative Policy Optimization via Gradient and Entropy Control</a></div>
-          <div class="paper-meta">Year: 2025 • Citations: 0</div>
-        </li>
-
-            <li>
-              <div class="paper-title">
-                <a href="https://www.springerprofessional.de/en/cybersecurity-with-llms-and-rags-challenges-and-innovations/51404966" target="_blank">
-                  Cybersecurity with LLMs and RAGs: Challenges and Innovations
-                </a>
-              </div>
-              <div class="paper-meta">Year: 2024 </div>
-            </li>
-          </ul>
-    </section>
-
-    <section id="articles">
-      <h2>Articles</h2>
-      <div class="article-card">
-        <h3><a href="https://medium.com/@marco.simoni0711/gtpo-vs-grpo-a-smarter-path-to-stable-reasoning-llms-3f51bc0b58c1" target="_blank">
-          GTPO vs GRPO: A Smarter Path to Stable Reasoning LLMs
-        </a></h3>
-        <p>
-          In this piece I discuss the differences between <b>GRPO</b> and <b>GTPO</b>, 
-          two reinforcement learning approaches designed to stabilize and align 
-          large language models. Why is <b>alignment</b> crucial for reasoning? 
-          Because RL can make LLMs not only more powerful, but also more trustworthy.
-        </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:marco.simoni@iit.cnr.it">
+          <i class="fas fa-paper-plane"></i> Get in touch
+        </a>
+        <a class="btn btn-ghost" href="#papers">
+          <i class="fas fa-book-open"></i> Read the papers
+        </a>
+        <nav class="socials" aria-label="Profiles elsewhere">
+          <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://github.com/winstonsmith1897" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/marco-simoni-ba1a06242/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://medium.com/@marco.simoni0711" target="_blank" rel="noopener" aria-label="Medium" title="Medium"><i class="fab fa-medium"></i></a>
+        </nav>
       </div>
-      <div class="article-card">
-        <h3><a href="https://medium.com/@marco.simoni0711/reinforce-vs-posterior-token-targets-two-paths-to-steering-language-models-42892f15cd70" target="_blank">
-          REINFORCE vs. Posterior Token Targets: Two Paths to Steering Language Models
-        </a></h3>
-        <p>
-          Sharing some brief notes I wrote for myself ... maybe useful for others too.  
-          👉 Posterior: update = p - q (deterministic, low variance, compute-heavy).  
-          👉 REINFORCE: update = -A(y)(e_y - p) (lightweight, scalable, noisy — matches q only in expectation).  
-        </p>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-card">
-      <h3>GTPO: Group-relative Trajectory-Based Policy Optimization</h3>
-
-      <div style="text-align:center; margin: 1rem 0;">
-        <img 
-  src="videos/maze.gif"
-  alt="GTPO maze optimization visualization"
-  style="max-width:60%; height:auto; border-radius:8px;"
->
-
-
-      </div>
-
-      
-  <p class="project-description">
-    This repository contains the official implementation of
-    <strong>GTPO (Group-relative Trajectory-based Policy Optimization)</strong>,
-    a novel method for stable and effective policy optimization in Large Language Models (LLMs).
-    <br><br>
-    GTPO addresses key limitations of Group-relative Policy Optimization (GRPO), namely:
-  </p>
-
-  <ol class="project-list">
-    <li>
-      <strong>Token-level gradient conflicts</strong> – where tokens shared across positively
-      and negatively rewarded completions are inconsistently updated, often penalizing
-      essential formatting tokens.
-    </li>
-    <li>
-      <strong>Policy collapse</strong> – where negatively rewarded completions destabilize
-      training, flattening the output distribution and degrading performance.
-    </li>
-  </ol>
-
-  <p class="project-description">
-    GTPO introduces <strong>conflict-aware gradient corrections</strong> and
-    <strong>entropy-based regularization</strong> to mitigate these issues, ensuring more
-    stable training without the need for KL-divergence regularization or a reference model.
-  </p>
-
-  <p class="project-links">
-    📄 Paper:
-    <a href="https://arxiv.org/abs/2508.03772" target="_blank">
-      GTPO: Trajectory-Based Policy Optimization in Large Language Models
-    </a>
-    <br>
-    💻 Code:
-    <a href="https://github.com/winstonsmith1897/GTPO" target="_blank">
-      github.com/winstonsmith1897/GTPO
-    </a>
-  </p>
-</div>
-
-<div class="project-card">
-  <h3>TITAN: Typed Bidirectional Knowledge Graph for CTI Reasoning</h3>
-
-  <p class="project-description">
-    TITAN is a <strong>typed, bidirectional knowledge graph framework</strong> for
-    <strong>Cyber Threat Intelligence (CTI)</strong> reasoning and
-    <strong>question answering</strong>.
-    It integrates data from the <strong>MITRE ATT&CK STIX</strong> bundles,
-    builds a <strong>TITAN Ontology</strong>, generates
-    <strong>reasoning (CoT)</strong> and <strong>non-reasoning (NoCoT)</strong>
-    datasets, and provides an <strong>end-to-end pipeline</strong> for model
-    training, evaluation, and graph execution.
-  </p>
-
-  <h4 class="project-subtitle">🎬 Demos</h4>
-
-  <div class="project-demos" style="text-align:center; margin: 1rem 0;">
-    <figure>
-      <img src="videos/demo3.gif" alt="TITAN with Chain of Thought (CoT)" loading="lazy"   style="max-width:90%; height:auto; border-radius:8px;">
-      <figcaption>TITAN with Chain of Thought (CoT)</figcaption>
-    </figure>
-
-    <figure>
-      <img src="videos/demo1.gif" alt="No Chain of Thought (Example 1)" loading="lazy"   style="max-width:90%; height:auto; border-radius:8px;">
-      <figcaption>No Chain of Thought (Example 1)</figcaption>
-    </figure>
-
-    <figure>
-      <img src="videos/demo2.gif" alt="No Chain of Thought (Example 2)" loading="lazy"   style="max-width:90%; height:auto; border-radius:8px;">
-      <figcaption>No Chain of Thought (Example 2)</figcaption>
-    </figure>
-
-    <figure>
-      <img src="videos/demo4.gif" alt="TITAN as a Cybersecurity Agent" loading="lazy"   style="max-width:90%; height:auto; border-radius:8px;">
-      <figcaption>TITAN as a tool for a Cybersecurity Agent</figcaption>
-    </figure>
+    </div>
   </div>
+</header>
 
-  <p class="project-links">
-    💻 Code:
-    <a href="https://github.com/cti-graph-reasoner/TITAN" target="_blank">
-      github.com/cti-graph-reasoner/TITAN
-    </a>
-  </p>
-</div>
+<nav class="nav" aria-label="Sections">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="#top">Marco Simoni</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#papers">Papers</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+    </div>
+    <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+  </div>
+</nav>
 
-      <div class="project-card">
-        <h3>Mixture of RAG Security Experts (MoRSE)</h3>
-        <div style="text-align:center; margin: 1rem 0;">
-          <iframe 
-            src="https://www.youtube.com/embed/nsI1HCUVDSc" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
+<main id="main">
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>About</h2>
+        <p>What I work on, and why.</p>
+      </div>
+      <div class="prose">
         <p>
-          I introduce the first specialised AI chatbot for cybersecurity <b>MoRSE (Mixture of RAGs Security Experts)</b>, 
-          which aims to provide comprehensive and complete knowledge about cybersecurity. 
-          MoRSE uses two <b>Retrieval Augmented Generation (RAG)</b> systems designed to provide 
-          clear, structured, and accurate answers to cybersecurity queries. 
-          Unlike traditional <b>Large Language Models (LLMs)</b> that rely on Parametric Knowledge Bases, 
-          MoRSE retrieves relevant documents from Non-Parametric Knowledge Bases in response to user queries. 
-          It then uses this information to generate accurate answers, improving cybersecurity accuracy and reliability. 
-          In addition, MoRSE benefits from real-time updates to its knowledge bases, enabling continuous 
-          knowledge enrichment without retraining.
+          I am a researcher at the <strong>Institute of Informatics and Telematics (IIT–CNR)</strong> in Pisa,
+          where I study how <strong>reinforcement learning</strong> shapes the reasoning behaviour of
+          large language models. I hold a PhD from Sapienza University of Rome.
+        </p>
+        <p>
+          Most RL post-training methods optimise a reward and hope reasoning follows. My work looks at
+          what actually happens to the gradient: with <strong>GTPO</strong> I showed that group-relative
+          objectives push conflicting updates through tokens shared by rewarded and penalised completions,
+          and that fixing this removes the need for KL regularisation entirely. More recently, at
+          <strong>ACL 2026</strong>, we traced the hidden objective biases that group-based RL introduces
+          without anyone asking for them.
+        </p>
+        <p>
+          I test these ideas in <strong>cybersecurity</strong> — vulnerability detection, threat intelligence,
+          malware analysis — because it is a domain where a plausible-sounding wrong answer has a cost,
+          which makes it an honest benchmark for reasoning. Alongside this I build
+          <strong>open-source research infrastructure</strong>: DantinoX, GTPO, TITAN and MoRSE are all public.
         </p>
       </div>
-    </section>
-  </main>
+      <div class="chips">
+        <span class="chip"><i class="fas fa-brain"></i> LLM Alignment</span>
+        <span class="chip"><i class="fas fa-robot"></i> GRPO / GTPO</span>
+        <span class="chip"><i class="fas fa-diagram-project"></i> Knowledge Graphs</span>
+        <span class="chip"><i class="fas fa-shield-halved"></i> AI for Cybersecurity</span>
+        <span class="chip"><i class="fas fa-microchip"></i> JAX / PyTorch</span>
+      </div>
+    </div>
+  </section>
 
+  <section id="papers" class="tinted">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Papers</h2>
+        <p>
+          Synced from
+          <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+          Last updated <!-- UPDATED:START -->12 August 2026<!-- UPDATED:END -->.
+        </p>
+      </div>
 
-  <footer>
-    &copy; 2025 Marco Simoni – Powered by GitHub Pages &amp; Google Scholar
-  </footer>
+      <div class="filters" id="paper-filters" role="group" aria-label="Filter papers by topic">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="rl" aria-pressed="false">RL &amp; Reasoning</button>
+        <button class="filter" type="button" data-filter="security" aria-pressed="false">Cybersecurity</button>
+        <button class="filter" type="button" data-filter="kg" aria-pressed="false">Knowledge Graphs</button>
+        <!-- Year buttons are appended at runtime from the papers actually present. -->
+      </div>
 
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const toggleIcon = document.querySelector(".theme-toggle i");
-      if (body.getAttribute("data-theme") === "light") {
-        body.setAttribute("data-theme", "dark");
-        toggleIcon.classList.remove("fa-moon");
-        toggleIcon.classList.add("fa-sun");
-      } else {
-        body.setAttribute("data-theme", "light");
-        toggleIcon.classList.remove("fa-sun");
-        toggleIcon.classList.add("fa-moon");
-      }
-    }
-  </script>
+      <!-- PAPERS:START -->
+      <ul class="papers" id="paper-list">
+
+        <li class="paper" data-tags="rl 2026">
+          <div class="paper-top">
+            <span class="venue is-journal">Information Sciences</span>
+            <span class="year">2026</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 124</span>
+          </div>
+          <h3><a href="https://www.sciencedirect.com/science/article/pii/S0020025526008704" target="_blank" rel="noopener">Concise Thoughts: Impact of Output Length on LLM Reasoning and Cost</a></h3>
+          <p class="authors">S. Nayab, G. Rossolini, <span class="me">M. Simoni</span>, A. Saracino, G. Buttazzo, N. Manes, F. Giacomelli</p>
+          <div class="paper-foot">Information Sciences, Elsevier, art. 123939</div>
+        </li>
+
+        <li class="paper" data-tags="rl 2026">
+          <div class="paper-top">
+            <span class="venue is-conference">ACL 2026</span>
+            <span class="year">2026</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 0</span>
+          </div>
+          <h3><a href="https://aclanthology.org/2026.acl-short.11/" target="_blank" rel="noopener">On the Hidden Objective Biases of Group-based Reinforcement Learning</a></h3>
+          <p class="authors">A. Fontana, <span class="me">M. Simoni</span>, G. Rossolini, P. Mori, A. Saracino</p>
+          <div class="paper-foot">Proc. of the 64th Annual Meeting of the ACL (Short Papers), pp. 109–121</div>
+        </li>
+
+        <li class="paper" data-tags="rl security 2026">
+          <div class="paper-top">
+            <span class="venue is-thesis">PhD Thesis</span>
+            <span class="year">2026</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 0</span>
+          </div>
+          <h3><a href="https://iris.uniroma1.it/handle/11573/1760907" target="_blank" rel="noopener">Toward Reliable and Adaptive Large Language Models in the Cybersecurity Domain</a></h3>
+          <p class="authors"><span class="me">M. Simoni</span></p>
+          <div class="paper-foot">Doctoral thesis, Sapienza University of Rome</div>
+        </li>
+
+        <li class="paper" data-tags="security 2025">
+          <div class="paper-top">
+            <span class="venue is-conference">ACM SAC 2025</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 33</span>
+          </div>
+          <h3><a href="https://dl.acm.org/doi/abs/10.1145/3672608.3707898" target="_blank" rel="noopener">MoRSE: Bridging the Gap in Cybersecurity Expertise with Retrieval Augmented Generation</a></h3>
+          <p class="authors"><span class="me">M. Simoni</span>, A. Saracino, Vinod P., M. Conti</p>
+          <div class="paper-foot">Proc. of the 40th ACM/SIGAPP Symposium on Applied Computing</div>
+        </li>
+
+        <li class="paper" data-tags="rl 2025">
+          <div class="paper-top">
+            <span class="venue">arXiv</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 18</span>
+          </div>
+          <h3><a href="https://arxiv.org/abs/2508.03772" target="_blank" rel="noopener">GTPO: Stabilizing Group Relative Policy Optimization via Gradient and Entropy Control</a></h3>
+          <p class="authors"><span class="me">M. Simoni</span>, A. Fontana, G. Rossolini, A. Saracino, P. Mori</p>
+          <div class="paper-foot">arXiv:2508.03772 · <a href="https://github.com/winstonsmith1897/GTPO" target="_blank" rel="noopener">code</a></div>
+        </li>
+
+        <li class="paper" data-tags="rl security 2025">
+          <div class="paper-top">
+            <span class="venue">arXiv</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 8</span>
+          </div>
+          <h3><a href="https://arxiv.org/abs/2507.03051" target="_blank" rel="noopener">Improving LLM Reasoning for Vulnerability Detection via Group Relative Policy Optimization</a></h3>
+          <p class="authors"><span class="me">M. Simoni*</span>, A. Fontana*, G. Rossolini, A. Saracino</p>
+          <div class="paper-foot">arXiv:2507.03051 · * equal contribution</div>
+        </li>
+
+        <li class="paper" data-tags="security 2025">
+          <div class="paper-top">
+            <span class="venue is-journal">FGCS</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 6</span>
+          </div>
+          <h3><a href="https://www.sciencedirect.com/science/article/pii/S0167739X25003620" target="_blank" rel="noopener">On-device Derivation of IoT Usage Control Policies: Automating U-XACML Policy Generation from Natural Language with LLMs in Smart Home Environments</a></h3>
+          <p class="authors">L. Alajramy, <span class="me">M. Simoni</span>, M. Rasori, A. Saracino, P. Mori</p>
+          <div class="paper-foot">Future Generation Computer Systems, Elsevier, art. 108067</div>
+        </li>
+
+        <li class="paper" data-tags="kg security 2025">
+          <div class="paper-top">
+            <span class="venue is-conference">ARES 2025</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 3</span>
+          </div>
+          <h3><a href="https://link.springer.com/chapter/10.1007/978-3-032-00639-4_19" target="_blank" rel="noopener">Leveraging Knowledge Graphs and LLMs for Structured Generation of Misinformation</a></h3>
+          <p class="authors">S. Nayab, <span class="me">M. Simoni</span>, G. Rossolini</p>
+          <div class="paper-foot">International Conference on Availability, Reliability and Security</div>
+        </li>
+
+        <li class="paper" data-tags="kg security 2025">
+          <div class="paper-top">
+            <span class="venue is-conference">SECRYPT 2025</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 2</span>
+          </div>
+          <h3><a href="https://www.scitepress.org/Papers/2025/136293/136293.pdf" target="_blank" rel="noopener">MATRIX: A Comprehensive Graph-based Framework for Malware Analysis and Threat Research</a></h3>
+          <p class="authors"><span class="me">M. Simoni</span>, A. Saracino</p>
+          <div class="paper-foot">Proc. of the International Conference on Security and Cryptography</div>
+        </li>
+
+        <li class="paper" data-tags="rl security 2025">
+          <div class="paper-top">
+            <span class="venue is-conference">ARES 2025</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 1</span>
+          </div>
+          <h3><a href="https://link.springer.com/chapter/10.1007/978-3-032-00639-4_18" target="_blank" rel="noopener">Unmasking Model Behavior: How LLMs Reason on Vulnerability Detection</a></h3>
+          <p class="authors">A. Fontana, <span class="me">M. Simoni</span></p>
+          <div class="paper-foot">International Conference on Availability, Reliability and Security</div>
+        </li>
+
+        <li class="paper" data-tags="kg 2025">
+          <div class="paper-top">
+            <span class="venue">arXiv</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 0</span>
+          </div>
+          <h3><a href="https://arxiv.org/abs/2511.11258" target="_blank" rel="noopener">KGQuest: Template-Driven QA Generation from Knowledge Graphs with LLM-Based Refinement</a></h3>
+          <p class="authors">S. Nayab, <span class="me">M. Simoni</span>, G. Rossolini, A. Saracino</p>
+          <div class="paper-foot">arXiv:2511.11258</div>
+        </li>
+
+        <li class="paper" data-tags="kg security 2025">
+          <div class="paper-top">
+            <span class="venue">arXiv</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 0</span>
+          </div>
+          <h3><a href="https://arxiv.org/abs/2510.14670" target="_blank" rel="noopener">TITAN: Graph-Executable Reasoning for Cyber Threat Intelligence</a></h3>
+          <p class="authors"><span class="me">M. Simoni</span>, A. Fontana, A. Saracino, P. Mori</p>
+          <div class="paper-foot">arXiv:2510.14670 · <a href="https://github.com/cti-graph-reasoner/TITAN" target="_blank" rel="noopener">code</a></div>
+        </li>
+
+        <li class="paper" data-tags="2025">
+          <div class="paper-top">
+            <span class="venue is-journal">Riv. It. Med. Legale</span>
+            <span class="year">2025</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 0</span>
+          </div>
+          <h3><a href="https://iris.santannapisa.it/handle/11382/586032" target="_blank" rel="noopener">Intelligenza artificiale in medicina e responsabilità: scenari giuridici e medico-legali</a></h3>
+          <p class="authors">G. Fiorinelli, L. Menozzi, G. Sestini, A. Saracino, <span class="me">M. Simoni</span>, A. Parziale, P.G. Macrì</p>
+          <div class="paper-foot">Rivista Italiana di Medicina Legale e del Diritto in Campo Sanitario, 4, pp. 831–854</div>
+        </li>
+
+        <li class="paper" data-tags="security 2024">
+          <div class="paper-top">
+            <span class="venue is-conference">SPIoT 2024</span>
+            <span class="year">2024</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 2</span>
+          </div>
+          <h3><a href="https://link.springer.com/chapter/10.1007/978-3-031-94458-1_8" target="_blank" rel="noopener">Cybersecurity with LLMs and RAGs: Challenges and Innovations</a></h3>
+          <p class="authors"><span class="me">M. Simoni</span>, A. Saracino</p>
+          <div class="paper-foot">International Conference on Security and Privacy in the Internet of Things</div>
+        </li>
+
+        <li class="paper" data-tags="security 2023">
+          <div class="paper-top">
+            <span class="venue is-conference">ARES 2023</span>
+            <span class="year">2023</span>
+            <span class="cites"><i class="fas fa-quote-right"></i> 19</span>
+          </div>
+          <h3><a href="https://dl.acm.org/doi/abs/10.1145/3600160.3605057" target="_blank" rel="noopener">Graph-based Android Malware Detection and Categorization through BERT Transformer</a></h3>
+          <p class="authors"><span class="me">M. Simoni</span>, A. Saracino</p>
+          <div class="paper-foot">Proc. of the 18th International Conference on Availability, Reliability and Security</div>
+        </li>
+
+      </ul>
+      <!-- PAPERS:END -->
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p>Open-source research code — all of it public and runnable.</p>
+      </div>
+
+      <div class="projects">
+
+        <article class="project">
+          <div class="project-head">
+            <p class="project-kicker">Language modelling framework</p>
+            <h3>DantinoX — one backbone, three generation paradigms</h3>
+          </div>
+          <div class="project-body">
+            <div class="media embed">
+              <iframe src="https://www.youtube-nocookie.com/embed/1u5-AieDzIc"
+                      title="DANTINOX: A Unified Framework for Multi-Paradigm Language Modeling"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen></iframe>
+            </div>
+
+            <div class="stack">
+              <span class="tech">JAX</span>
+              <span class="tech">Flax NNX</span>
+              <span class="tech">autoregressive</span>
+              <span class="tech">masked diffusion</span>
+              <span class="tech">flow-matching</span>
+              <span class="tech">MHA / GQA / MLA</span>
+              <span class="tech">MoE</span>
+              <span class="tech">LoRA</span>
+            </div>
+
+            <p>
+              Comparing autoregressive decoding, masked diffusion and continuous flow-matching is
+              usually unfair: each paradigm lives in its own codebase, so any measured difference may
+              come from the tokenizer or the training loop rather than the paradigm itself.
+              <strong>DantinoX removes that confound.</strong>
+            </p>
+            <p>
+              The model backbone is fully separated from the generation method, so switching between
+              <strong>AR</strong>, <strong>LLaDA-style masked diffusion</strong> and <strong>ELF
+              flow-matching</strong> is a single configuration field — the weights, tokenizer, trainer
+              and streaming generator stay byte-for-byte identical:
+            </p>
+            <p>
+              Attention (MHA/GQA/MLA, Flash, sliding-window, differential), feed-forward (dense, MoE,
+              LatentMoE), positional encoding, optimizer, LoRA and DP×TP sharding are all flags on the
+              same two dataclasses — thousands of valid combinations, zero code changes. It ships with a
+              paradigm-agnostic trainer, a benchmarking suite with zero-execution FLOP counting, and a
+              14-subcommand CLI.
+            </p>
+            <div class="links">
+              <a class="link-pill" href="https://youtu.be/1u5-AieDzIc" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> 2-minute demo</a>
+              <a class="link-pill" href="https://github.com/winstonsmith1897/DantinoX" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              <a class="link-pill" href="https://dantinox.readthedocs.io" target="_blank" rel="noopener"><i class="fas fa-book"></i> Documentation</a>
+              <a class="link-pill" href="https://pypi.org/project/dantinox/" target="_blank" rel="noopener"><i class="fab fa-python"></i> pip install dantinox</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <p class="project-kicker">Reinforcement learning</p>
+            <h3>GTPO — group-relative trajectory-based policy optimization</h3>
+          </div>
+          <div class="project-body">
+            <div class="media" style="max-width:520px;margin-inline:auto">
+              <video loop muted playsinline preload="none" width="1200" height="1200"
+                     poster="videos/maze.jpg" aria-label="GTPO maze optimization visualization">
+                <source src="videos/maze.mp4" type="video/mp4">
+                <img src="videos/maze.gif" alt="GTPO maze optimization visualization">
+              </video>
+            </div>
+
+            <p>
+              The official implementation of <strong>GTPO</strong>, a method for stable policy
+              optimization in LLMs. It targets two failure modes of GRPO:
+            </p>
+            <ol>
+              <li>
+                <strong>Token-level gradient conflicts</strong> — tokens shared across positively and
+                negatively rewarded completions receive inconsistent updates, which often ends up
+                penalising essential formatting tokens.
+              </li>
+              <li>
+                <strong>Policy collapse</strong> — negatively rewarded completions destabilise training,
+                flattening the output distribution and degrading performance.
+              </li>
+            </ol>
+            <p>
+              GTPO introduces <strong>conflict-aware gradient corrections</strong> and
+              <strong>entropy-based regularization</strong>, which makes training stable without
+              KL-divergence regularization and without a reference model at all.
+            </p>
+            <div class="links">
+              <a class="link-pill" href="https://arxiv.org/abs/2508.03772" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Paper</a>
+              <a class="link-pill" href="https://github.com/winstonsmith1897/GTPO" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              <a class="link-pill" href="https://medium.com/@marco.simoni0711/gtpo-vs-grpo-a-smarter-path-to-stable-reasoning-llms-3f51bc0b58c1" target="_blank" rel="noopener"><i class="fab fa-medium"></i> Explainer</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <p class="project-kicker">Cyber threat intelligence</p>
+            <h3>TITAN — typed bidirectional knowledge graph for CTI reasoning</h3>
+          </div>
+          <div class="project-body">
+            <p>
+              TITAN is a <strong>typed, bidirectional knowledge graph framework</strong> for
+              <strong>Cyber Threat Intelligence</strong> reasoning and question answering. It ingests
+              <strong>MITRE ATT&amp;CK STIX</strong> bundles, builds the TITAN ontology, generates both
+              reasoning (CoT) and non-reasoning (NoCoT) datasets, and provides an end-to-end pipeline
+              for training, evaluation and graph execution.
+            </p>
+
+            <div class="demos">
+              <figure>
+                <div class="media playable" data-video="videos/demo3.mp4">
+                  <img class="poster" src="videos/demo3.jpg" alt="TITAN answering with Chain of Thought" loading="lazy" width="900" height="458">
+                  <button class="play" type="button" aria-label="Play the demo: TITAN with Chain of Thought">
+                    <span><i class="fas fa-play" aria-hidden="true"></i></span>
+                  </button>
+                  <span class="weight">2:40 · 6 MB</span>
+                </div>
+                <figcaption>With Chain of Thought</figcaption>
+              </figure>
+              <figure>
+                <div class="media playable" data-video="videos/demo1.mp4">
+                  <img class="poster" src="videos/demo1.jpg" alt="TITAN answering without Chain of Thought, example 1" loading="lazy" width="900" height="456">
+                  <button class="play" type="button" aria-label="Play the demo: without Chain of Thought, example 1">
+                    <span><i class="fas fa-play" aria-hidden="true"></i></span>
+                  </button>
+                  <span class="weight">1:51 · 4 MB</span>
+                </div>
+                <figcaption>Without Chain of Thought (1)</figcaption>
+              </figure>
+              <figure>
+                <div class="media playable" data-video="videos/demo2.mp4">
+                  <img class="poster" src="videos/demo2.jpg" alt="TITAN answering without Chain of Thought, example 2" loading="lazy" width="900" height="456">
+                  <button class="play" type="button" aria-label="Play the demo: without Chain of Thought, example 2">
+                    <span><i class="fas fa-play" aria-hidden="true"></i></span>
+                  </button>
+                  <span class="weight">2:01 · 4 MB</span>
+                </div>
+                <figcaption>Without Chain of Thought (2)</figcaption>
+              </figure>
+              <figure>
+                <div class="media playable" data-video="videos/demo4.mp4">
+                  <img class="poster" src="videos/demo4.jpg" alt="TITAN used as a tool by a cybersecurity agent" loading="lazy" width="900" height="458">
+                  <button class="play" type="button" aria-label="Play the demo: TITAN as a tool for a cybersecurity agent">
+                    <span><i class="fas fa-play" aria-hidden="true"></i></span>
+                  </button>
+                  <span class="weight">2:22 · 5 MB</span>
+                </div>
+                <figcaption>As a tool for a cybersecurity agent</figcaption>
+              </figure>
+            </div>
+
+            <div class="links">
+              <a class="link-pill" href="https://arxiv.org/abs/2510.14670" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Paper</a>
+              <a class="link-pill" href="https://github.com/cti-graph-reasoner/TITAN" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <p class="project-kicker">Retrieval augmented generation</p>
+            <h3>MoRSE — mixture of RAG security experts</h3>
+          </div>
+          <div class="project-body">
+            <div class="media embed">
+              <iframe src="https://www.youtube-nocookie.com/embed/nsI1HCUVDSc"
+                      title="MoRSE: Mixture of RAG Security Experts — demo"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen></iframe>
+            </div>
+            <p>
+              <strong>MoRSE</strong> is the first specialised AI assistant for cybersecurity. It runs two
+              <strong>Retrieval Augmented Generation</strong> systems designed to give structured,
+              verifiable answers to security questions.
+            </p>
+            <p>
+              Unlike LLMs that answer from parametric knowledge alone, MoRSE retrieves from
+              non-parametric knowledge bases and grounds its answer in what it found — which both
+              improves accuracy and makes the answer checkable. Because the knowledge bases update in
+              real time, MoRSE keeps learning new threats without retraining.
+            </p>
+            <div class="links">
+              <a class="link-pill" href="https://dl.acm.org/doi/abs/10.1145/3672608.3707898" target="_blank" rel="noopener"><i class="fas fa-file-lines"></i> Paper (ACM SAC 2025)</a>
+              <a class="link-pill" href="https://youtu.be/nsI1HCUVDSc" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Demo</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="writing" class="tinted">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Writing</h2>
+        <p>Shorter, less formal notes on what I am reading and building.</p>
+      </div>
+      <div class="articles">
+        <article class="article">
+          <span class="article-src"><i class="fab fa-medium"></i> Medium</span>
+          <h3><a href="https://medium.com/@marco.simoni0711/gtpo-vs-grpo-a-smarter-path-to-stable-reasoning-llms-3f51bc0b58c1" target="_blank" rel="noopener">GTPO vs GRPO: A Smarter Path to Stable Reasoning LLMs</a></h3>
+          <p>
+            Where GRPO breaks and what GTPO does differently — gradient conflicts, policy collapse,
+            and why alignment is what makes reasoning trustworthy rather than merely fluent.
+          </p>
+        </article>
+        <article class="article">
+          <span class="article-src"><i class="fab fa-medium"></i> Medium</span>
+          <h3><a href="https://medium.com/@marco.simoni0711/reinforce-vs-posterior-token-targets-two-paths-to-steering-language-models-42892f15cd70" target="_blank" rel="noopener">REINFORCE vs. Posterior Token Targets: Two Paths to Steering Language Models</a></h3>
+          <p>
+            Notes I wrote for myself, in case they help someone else. Posterior: update = p − q —
+            deterministic, low variance, compute-heavy. REINFORCE: update = −A(y)(e_y − p) —
+            lightweight and scalable, but noisy, and matches q only in expectation.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Marco Simoni</span>
+    <span>
+      Publication data from
+      <a href="https://scholar.google.com/citations?user=hhNQwfkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      · Hosted on GitHub Pages
+    </span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+
+  /* ---- Theme toggle ---------------------------------------------------- */
+  var toggle = document.getElementById("theme-toggle");
+
+  function paintToggle() {
+    var dark = root.getAttribute("data-theme") === "dark";
+    var icon = toggle.querySelector("i");
+    icon.className = dark ? "fas fa-sun" : "fas fa-moon";
+    toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  }
+
+  toggle.addEventListener("click", function () {
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) { /* private mode */ }
+    paintToggle();
+  });
+  paintToggle();
+
+  /* Follow the OS only while the visitor has not chosen explicitly. */
+  var mq = window.matchMedia("(prefers-color-scheme: dark)");
+  mq.addEventListener("change", function (e) {
+    try { if (localStorage.getItem("theme")) return; } catch (err) { /* ignore */ }
+    root.setAttribute("data-theme", e.matches ? "dark" : "light");
+    paintToggle();
+  });
+
+  /* ---- Paper filters --------------------------------------------------- */
+  var filterBar = document.getElementById("paper-filters");
+  var papers    = document.querySelectorAll("#paper-list .paper");
+
+  /* One button per year actually present, newest first, so the bar stays
+     correct as update.py adds publications. */
+  var years = {};
+  Array.prototype.forEach.call(papers, function (p) {
+    (p.dataset.tags || "").split(/\s+/).forEach(function (t) {
+      if (/^\d{4}$/.test(t)) { years[t] = true; }
+    });
+  });
+  Object.keys(years).sort().reverse().forEach(function (y) {
+    var b = document.createElement("button");
+    b.className = "filter";
+    b.type = "button";
+    b.dataset.filter = y;
+    b.setAttribute("aria-pressed", "false");
+    b.textContent = y;
+    filterBar.appendChild(b);
+  });
+
+  var filters = filterBar.querySelectorAll(".filter");
+
+  Array.prototype.forEach.call(filters, function (btn) {
+    btn.addEventListener("click", function () {
+      var want = btn.dataset.filter;
+      Array.prototype.forEach.call(filters, function (b) {
+        b.setAttribute("aria-pressed", String(b === btn));
+      });
+      Array.prototype.forEach.call(papers, function (p) {
+        var tags = (p.dataset.tags || "").split(/\s+/);
+        p.classList.toggle("is-hidden", want !== "all" && tags.indexOf(want) === -1);
+      });
+    });
+  });
+
+  /* ---- Click-to-play for the heavy screencasts ------------------------- */
+  Array.prototype.forEach.call(document.querySelectorAll(".media.playable"), function (box) {
+    box.querySelector(".play").addEventListener("click", function () {
+      var poster = box.querySelector(".poster");
+      var video = document.createElement("video");
+      video.src = box.dataset.video;
+      video.poster = poster.getAttribute("src");
+      video.width = poster.width;
+      video.height = poster.height;
+      video.controls = true;
+      video.loop = true;
+      video.muted = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.setAttribute("aria-label", poster.alt);
+      box.innerHTML = "";
+      box.classList.remove("playable");
+      box.appendChild(video);
+      var p = video.play();
+      if (p && p.catch) { p.catch(function () { /* left for the controls */ }); }
+    });
+  });
+
+  /* ---- The small inline demos play only while on screen ---------------- */
+  var videos = document.querySelectorAll(".media:not(.playable) > video");
+  if ("IntersectionObserver" in window && videos.length) {
+    var vo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting) {
+          var p = v.play();
+          if (p && p.catch) { p.catch(function () { /* autoplay blocked */ }); }
+        } else if (!v.paused) {
+          v.pause();
+        }
+      });
+    }, { rootMargin: "150px 0px", threshold: 0.15 });
+    Array.prototype.forEach.call(videos, function (v) { vo.observe(v); });
+  }
+
+  /* ---- Highlight the section currently in view ------------------------- */
+  var navLinks = document.querySelectorAll(".nav-links a");
+  var sections = [];
+  Array.prototype.forEach.call(navLinks, function (a) {
+    var el = document.querySelector(a.getAttribute("href"));
+    if (el) { sections.push({ link: a, el: el }); }
+  });
+
+  if ("IntersectionObserver" in window && sections.length) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) { return; }
+        Array.prototype.forEach.call(navLinks, function (a) { a.classList.remove("active"); });
+        var hit = sections.filter(function (s) { return s.el === en.target; })[0];
+        if (hit) { hit.link.classList.add("active"); }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    sections.forEach(function (s) { so.observe(s.el); });
+  }
+})();
+</script>
 </body>
 </html>
